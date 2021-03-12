@@ -28,16 +28,7 @@
     </PropertyGroup>
 
     <Target Name="ZipDirectory" AfterTargets="Build">
-        <PropertyGroup>
-            <Version>1.0.0</Version>
-        </PropertyGroup>
-
-<!--        <GetVersion AssemblyPath="$(SolutionDir)\src\bin\Geta.Tags.dll">-->
-<!--            <Output TaskParameter="Version" PropertyName="Version" />-->
-<!--        </GetVersion>-->
-
-        <!-- Create the Versioned out dir for the client resources-->
-        <MakeDir Directories="$(TmpOutDir)\content\$(Version)" />
+        <MakeDir Directories="$(TmpOutDir)\content\" />
 
         <!-- Copy -->
         <ItemGroup>
@@ -46,11 +37,8 @@
         </ItemGroup>
 
         <Copy SourceFiles="$(SolutionDir)\src\module\module.config" DestinationFolder="$(TmpOutDir)\content" />
-        <Copy SourceFiles="@(ClientResources)" DestinationFiles="@(ClientResources -> '$(TmpOutDir)\content\$(Version)\ClientResources\%(RecursiveDir)%(Filename)%(Extension)')" />
-        <Copy SourceFiles="@(Views)" DestinationFiles="@(Views -> '$(TmpOutDir)\content\$(Version)\Views\%(RecursiveDir)%(Filename)%(Extension)')" />
-
-        <!-- Update the module config with the version information -->
-        <XmlPoke XmlInputPath="$(TmpOutDir)\content\module.config" Query="/module/@clientResourceRelativePath" Value="$(Version)" />
+        <Copy SourceFiles="@(ClientResources)" DestinationFiles="@(ClientResources -> '$(TmpOutDir)\content\ClientResources\%(RecursiveDir)%(Filename)%(Extension)')" />
+        <Copy SourceFiles="@(Views)" DestinationFiles="@(Views -> '$(TmpOutDir)\content\Views\%(RecursiveDir)%(Filename)%(Extension)')" />
 
         <ZipDirectory SourceDirectory="$(TmpOutDir)\content" DestinationFile="$(OutDir)\Geta.Tags.zip" Overwrite="true" />
 

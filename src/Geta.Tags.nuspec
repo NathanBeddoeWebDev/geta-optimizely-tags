@@ -25,6 +25,6 @@
   </metadata>
   <files>
     <file src="bin\net5.0\Geta.Tags.dll" target="lib\net50\" />
-    <file src="bin\net5.0\Geta.Tags.zip" target="contentFiles\modules\_protected\Geta.Tags\" />
+    <file src="bin\net5.0\Geta.Tags.zip" target="contentFiles\any\any\modules\_protected\Geta.Tags\" />
   </files>
 </package>

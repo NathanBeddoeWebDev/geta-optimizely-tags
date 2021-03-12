@@ -4,6 +4,8 @@
         <TargetFramework>net5.0</TargetFramework>
         <AssemblyVersion>1.0.0</AssemblyVersion>
         <FileVersion>1.0.0</FileVersion>
+        <Configurations>Debug;Release;</Configurations>
+        <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
     <ItemGroup>
@@ -15,10 +17,40 @@
     <ItemGroup>
       <Content Include="Geta.Tags.nuspec" />
     </ItemGroup>
-<!--    <ItemGroup>-->
-<!--        <None Include="msbuild\Main.proj">-->
-<!--            <SubType>Designer</SubType>-->
-<!--        </None>-->
-<!--    </ItemGroup>-->
-<!--    <Import Project="$(SolutionDir)\src\msbuild\Main.proj" />-->
+
+    <PropertyGroup>
+        <SolutionDir Condition="$(SolutionDir) == ''">$(MSBuildProjectDirectory)\..\</SolutionDir>
+        <TmpOutDir>$(SolutionDir)\tmp</TmpOutDir>
+    </PropertyGroup>
+
+    <Target Name="ZipDirectory" AfterTargets="Build">
+        <PropertyGroup>
+            <Version>1.0.0</Version>
+        </PropertyGroup>
+
+<!--        <GetVersion AssemblyPath="$(SolutionDir)\src\bin\Geta.Tags.dll">-->
+<!--            <Output TaskParameter="Version" PropertyName="Version" />-->
+<!--        </GetVersion>-->
+
+        <!-- Create the Versioned out dir for the client resources-->
+        <MakeDir Directories="$(TmpOutDir)\content\$(Version)" />
+
+        <!-- Copy -->
+        <ItemGroup>
+            <ClientResources Include="$(SolutionDir)\src\module\ClientResources\**\*" />
+            <Views Include="$(SolutionDir)\src\module\Views\**\*" />
+        </ItemGroup>
+
+        <Copy SourceFiles="$(SolutionDir)\src\module\module.config" DestinationFolder="$(TmpOutDir)\content" />
+        <Copy SourceFiles="@(ClientResources)" DestinationFiles="@(ClientResources -> '$(TmpOutDir)\content\$(Version)\ClientResources\%(RecursiveDir)%(Filename)%(Extension)')" />
+        <Copy SourceFiles="@(Views)" DestinationFiles="@(Views -> '$(TmpOutDir)\content\$(Version)\Views\%(RecursiveDir)%(Filename)%(Extension)')" />
+
+        <!-- Update the module config with the version information -->
+        <XmlPoke XmlInputPath="$(TmpOutDir)\content\module.config" Query="/module/@clientResourceRelativePath" Value="$(Version)" />
+
+        <ZipDirectory SourceDirectory="$(TmpOutDir)\content" DestinationFile="$(OutDir)\Geta.Tags.zip" Overwrite="true" />
+
+        <!-- Cleanup -->
+        <RemoveDir Directories="$(TmpOutDir)" />
+    </Target>
 </Project>

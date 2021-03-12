@@ -3,11 +3,23 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <RootNamespace>Geta.Tags_new</RootNamespace>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="EPiServer.CMS.Core" Version="12.0.0-inte-017361" />
       <PackageReference Include="EPiServer.CMS.UI.Core" Version="12.0.0-inte-017361" />
+      <PackageReference Include="EPiServer.Framework" Version="12.0.0-inte-017361" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="Geta.Tags.nuspec" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="msbuild\Main.proj">
+            <SubType>Designer</SubType>
+        </None>
+    </ItemGroup>
+    <Import Project="$(SolutionDir)\src\msbuild\Main.proj" />
 </Project>

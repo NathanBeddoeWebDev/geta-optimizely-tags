@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Geta.Tags_new</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="EPiServer.CMS.Core" Version="12.0.0-inte-017361" />
+      <PackageReference Include="EPiServer.CMS.UI.Core" Version="12.0.0-inte-017361" />
+    </ItemGroup>
+
+</Project>

@@ -15,10 +15,10 @@
     <ItemGroup>
       <Content Include="Geta.Tags.nuspec" />
     </ItemGroup>
-    <ItemGroup>
-        <None Include="msbuild\Main.proj">
-            <SubType>Designer</SubType>
-        </None>
-    </ItemGroup>
-    <Import Project="$(SolutionDir)\src\msbuild\Main.proj" />
+<!--    <ItemGroup>-->
+<!--        <None Include="msbuild\Main.proj">-->
+<!--            <SubType>Designer</SubType>-->
+<!--        </None>-->
+<!--    </ItemGroup>-->
+<!--    <Import Project="$(SolutionDir)\src\msbuild\Main.proj" />-->
 </Project>

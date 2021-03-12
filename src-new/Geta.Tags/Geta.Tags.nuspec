@@ -18,7 +18,7 @@
 <!--    </dependencies>-->
   </metadata>
   <files>
-    <file src="bin\Geta.Tags-new.dll" target="lib\net50\" />
-    <file src="bin\Geta.Tags-new.zip" target="content\modules\_protected\Geta.Tags\" />
+    <file src="bin\Geta.Tags.dll" target="lib\net50\" />
+    <file src="bin\Geta.Tags.zip" target="content\modules\_protected\Geta.Tags\" />
   </files>
 </package>

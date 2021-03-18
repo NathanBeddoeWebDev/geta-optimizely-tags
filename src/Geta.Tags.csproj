@@ -1,23 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk.Razor">
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <AssemblyVersion>1.0.0</AssemblyVersion>
         <FileVersion>1.0.0</FileVersion>
         <Configurations>Debug;Release;</Configurations>
         <Platforms>AnyCPU</Platforms>
+        <NuspecFile>Geta.Tags.nuspec</NuspecFile>
+        <NuspecBasePath>$(ProjectDir)..\src\</NuspecBasePath>
+        <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     </PropertyGroup>
-
     <ItemGroup>
       <PackageReference Include="EPiServer.CMS.Core" Version="12.0.0-inte-017361" />
       <PackageReference Include="EPiServer.CMS.UI.Core" Version="12.0.0-inte-017361" />
       <PackageReference Include="EPiServer.Framework" Version="12.0.0-inte-017361" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="Geta.Tags.nuspec" />
-    </ItemGroup>
-
+    
     <PropertyGroup>
         <SolutionDir Condition="$(SolutionDir) == ''">$(MSBuildProjectDirectory)\..\</SolutionDir>
         <TmpOutDir>$(SolutionDir)\tmp</TmpOutDir>
@@ -33,12 +30,10 @@
         <!-- Copy -->
         <ItemGroup>
             <ClientResources Include="$(SolutionDir)\src\module\ClientResources\**\*" />
-            <Views Include="$(SolutionDir)\src\module\Views\**\*" />
         </ItemGroup>
 
         <Copy SourceFiles="$(SolutionDir)\src\module\module.config" DestinationFolder="$(TmpOutDir)\content" />
         <Copy SourceFiles="@(ClientResources)" DestinationFiles="@(ClientResources -> '$(TmpOutDir)\content\ClientResources\%(RecursiveDir)%(Filename)%(Extension)')" />
-        <Copy SourceFiles="@(Views)" DestinationFiles="@(Views -> '$(TmpOutDir)\content\Views\%(RecursiveDir)%(Filename)%(Extension)')" />
 
         <ZipDirectory SourceDirectory="$(TmpOutDir)\content" DestinationFile="$(OutDir)\Geta.Tags.zip" Overwrite="true" />
 

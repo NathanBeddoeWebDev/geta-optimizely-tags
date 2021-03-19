@@ -1,13 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <AssemblyVersion>1.0.0</AssemblyVersion>
-        <FileVersion>1.0.0</FileVersion>
+        <AssemblyVersion>5.0.0</AssemblyVersion>
+        <FileVersion>5.0.0</FileVersion>
         <Configurations>Debug;Release;</Configurations>
         <Platforms>AnyCPU</Platforms>
         <NuspecFile>Geta.Tags.nuspec</NuspecFile>
         <NuspecBasePath>$(ProjectDir)..\src\</NuspecBasePath>
         <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+        <PackageVersion>5.0.0</PackageVersion>
+        <NuspecProperties>version=$(PackageVersion)</NuspecProperties>
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="EPiServer.CMS.Core" Version="12.0.0-inte-017361" />
@@ -33,7 +35,7 @@
         </ItemGroup>
 
         <Copy SourceFiles="$(SolutionDir)\src\module\module.config" DestinationFolder="$(TmpOutDir)\content" />
-        <Copy SourceFiles="@(ClientResources)" DestinationFiles="@(ClientResources -> '$(TmpOutDir)\content\ClientResources\%(RecursiveDir)%(Filename)%(Extension)')" />
+        <Copy SourceFiles="@(ClientResources)" DestinationFiles="@(ClientResources -> '$(TmpOutDir)\content\5.0.0\ClientResources\%(RecursiveDir)%(Filename)%(Extension)')" />
 
         <ZipDirectory SourceDirectory="$(TmpOutDir)\content" DestinationFile="$(OutDir)\Geta.Tags.zip" Overwrite="true" />
 

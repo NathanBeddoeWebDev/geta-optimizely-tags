@@ -14,9 +14,9 @@
     <iconUrl>http://cdn.geta.no/opensource/icons/geta-tags-icon.png</iconUrl>
     <dependencies>
       <group targetFramework="net5.0">
-        <dependency id="EPiServer.CMS.UI.Core" version="[12.0.0-inte-017361]" />
-        <dependency id="EPiServer.CMS.Core" version="[12.0.0-inte-017361]" />
-        <dependency id="EPiServer.Framework" version="[12.0.0-inte-017361]" />
+        <dependency id="EPiServer.CMS.UI.Core" version="[12.0.0-inte-020292]" />
+        <dependency id="EPiServer.CMS.Core" version="[12.0.0-inte-020092]" />
+        <dependency id="EPiServer.Framework" version="[12.0.0-inte-020092]" />
       </group>     
     </dependencies>
     <contentFiles>
@@ -24,8 +24,8 @@
     </contentFiles>
   </metadata>
   <files>
-    <file src="bin\net5.0\Geta.Tags.dll" target="lib\net50\" />
-    <file src="bin\net5.0\Geta.Tags.Views.dll" target="lib\net50\" />
+    <file src="bin\net5.0\Geta.Tags.dll" target="lib\net5.0\" />
+    <file src="bin\net5.0\Geta.Tags.Views.dll" target="lib\net5.0\" />
     <file src="bin\net5.0\Geta.Tags.zip" target="contentFiles\any\any\modules\_protected\Geta.Tags\" />
     <file src="CopyZipFiles.targets" target="build\net5.0\Geta.Tags\.targets" />
   </files>

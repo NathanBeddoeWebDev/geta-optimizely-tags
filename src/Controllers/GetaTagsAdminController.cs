@@ -19,11 +19,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Geta.Tags.Controllers
 {
     [Authorize(Roles = "Administrators, WebAdmins, CmsAdmins")]
-    // [GuiPlugIn(
-    //     Area = EPiServer.PlugIn.PlugInArea.AdminMenu,
-    //     Url = "/GetaTagsAdmin",
-    //     DisplayName = "Geta Tags Management")]
-    [Authorize(Roles = "CmsAdmins")]
     public class GetaTagsAdminController : Controller
     {
         public static int PageSize { get; } = 30;

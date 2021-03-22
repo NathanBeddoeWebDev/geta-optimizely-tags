@@ -10,7 +10,6 @@ using EPiServer.Core;
 using EPiServer.Data;
 using EPiServer.DataAccess;
 using EPiServer.Security;
-using EPiServer.Shell;
 using Geta.Tags.Interfaces;
 using Geta.Tags.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -35,6 +34,7 @@ namespace Geta.Tags.Controllers
             _tagEngine = tagEngine;
         }
 
+        [HttpGet]
         public ActionResult Index(string searchString, int? page)
         {
             var pageNumber = page ?? 1;
@@ -43,13 +43,13 @@ namespace Geta.Tags.Controllers
 
             if (string.IsNullOrEmpty(searchString) && (page == null || page == pageNumber))
             {
-                return View(GetViewPath("Index"), GetPagedTagList(tags, pageNumber));
+                return View( GetPagedTagList(tags, pageNumber));
             }
 
             ViewBag.SearchString = searchString;
             tags = _tagRepository.GetAllTags().Where(s => s.Name.Contains(searchString)).ToList();
 
-            return View(GetViewPath("Index"), GetPagedTagList(tags, pageNumber));
+            return View(GetPagedTagList(tags, pageNumber));
         }
 
         private TagListViewModel GetPagedTagList(IList<Tag> tags, int pageNumber)
@@ -79,7 +79,7 @@ namespace Geta.Tags.Controllers
 
             ViewBag.Page = page;
             ViewBag.SearchString = searchString;
-            return PartialView(GetViewPath("Edit"), tag);
+            return PartialView(tag);
         }
 
         [HttpPost]
@@ -161,12 +161,7 @@ namespace Geta.Tags.Controllers
                 return RedirectToAction("Index", new { page, searchString });
             }
 
-            return View(GetViewPath("Delete"));
-        }
-
-        private string GetViewPath(string viewName)
-        {
-            return Paths.ToClientResource(typeof(GetaTagsAdminController), "Views/Admin/" + viewName + ".cshtml");
+            return View();
         }
     }
 }

@@ -26,7 +26,7 @@
   <files>
     <file src="bin\net5.0\Geta.Tags.dll" target="lib\net5.0\" />
     <file src="bin\net5.0\Geta.Tags.Views.dll" target="lib\net5.0\" />
-    <file src="bin\net5.0\Geta.Tags.zip" target="contentFiles\any\any\modules\_protected\Geta.Tags\" />
-    <file src="CopyZipFiles.targets" target="build\net5.0\Geta.Tags\.targets" />
+    <file src="bin\net5.0\Geta.Tags.zip" target="contentFiles\any\any\modules\_protected\Geta.Tags" />
+    <file src="Geta.Tags.targets" target="build\net5.0\Geta.Tags.targets" />
   </files>
 </package>

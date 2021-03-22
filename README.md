@@ -87,6 +87,11 @@ Tags management panel is available via following url:
 
 Use Geta.Tags.Sample (Episerver 12 preview version) project for testing
 
+Administrator credentials:
+
+Login: `administrator`
+Password: `Episerver123!`
+
 ## Package maintainer
 
 https://github.com/patkleef

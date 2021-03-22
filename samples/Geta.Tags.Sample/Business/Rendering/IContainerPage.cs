@@ -1,4 +1,4 @@
-namespace Geta.Tags.Demo.Business.Rendering
+﻿namespace Geta.Tags.Sample.Business.Rendering
 {
     /// <summary>
     /// Marker interface for content types which should not be handled by DefaultPageController.

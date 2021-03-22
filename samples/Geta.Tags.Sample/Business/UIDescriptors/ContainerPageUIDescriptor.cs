@@ -1,8 +1,8 @@
-using EPiServer.Editor;
+﻿using EPiServer.Editor;
 using EPiServer.Shell;
-using Geta.Tags.Demo.Models.Pages;
+using Geta.Tags.Sample.Models.Pages;
 
-namespace Geta.Tags.Demo.Business.UIDescriptors
+namespace Geta.Tags.Sample.Business.UIDescriptors
 {
     /// <summary>
     /// Describes how the UI should appear for <see cref="ContainerPage"/> content.

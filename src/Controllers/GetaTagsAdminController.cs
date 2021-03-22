@@ -57,7 +57,7 @@ namespace Geta.Tags.Controllers
             var viewModel = new TagListViewModel
             {
                 PageNumber = pageNumber,
-                PageCount = PageSize,
+                PageCount = (tags.Count + PageSize -1) / PageSize,
                 TotalItemCount = tags.Count,
                 Tags = tags.Skip((pageNumber - 1) * PageSize).Take(PageSize).ToList()
             };

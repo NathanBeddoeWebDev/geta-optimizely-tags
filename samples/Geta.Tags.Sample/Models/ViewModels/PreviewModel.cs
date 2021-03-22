@@ -1,8 +1,8 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using EPiServer.Core;
-using Geta.Tags.Demo.Models.Pages;
+using Geta.Tags.Sample.Models.Pages;
 
-namespace Geta.Tags.Demo.Models.ViewModels
+namespace Geta.Tags.Sample.Models.ViewModels
 {
     public class PreviewModel : PageViewModel<SitePageData>
     {
@@ -14,7 +14,7 @@ namespace Geta.Tags.Demo.Models.ViewModels
         }
 
         public IContent PreviewContent { get; set; }
-        public List<PreviewArea> Areas { get; set; }
+        public List<PreviewArea> Areas { get; set; } 
 
         public class PreviewArea
         {

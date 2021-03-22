@@ -42,4 +42,7 @@
         <!-- Cleanup -->
         <RemoveDir Directories="$(TmpOutDir)" />
     </Target>
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="xcopy &quot;$(ProjectDir)bin\net5.0\Geta.Tags.zip&quot; &quot;$(SolutionDir)samples\Geta.Tags.Sample\modules\_protected\Geta.Tags\&quot; /Y /I /E" />
+    </Target>
 </Project>

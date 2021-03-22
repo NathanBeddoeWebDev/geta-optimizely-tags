@@ -1,16 +1,18 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Geta.Tags.Demo.Models.Pages;
+using Geta.Tags.Sample.Models.Pages;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.Filters;
+using EPiServer.ServiceLocation;
 using EPiServer.Shell.Configuration;
 using EPiServer.Web;
 
-namespace Geta.Tags.Demo.Business
+namespace Geta.Tags.Sample.Business
 {
+    [ServiceConfiguration(Lifecycle = ServiceInstanceScope.Singleton)]
     public class ContentLocator
     {
         private readonly IContentLoader _contentLoader;
@@ -67,7 +69,7 @@ namespace Geta.Tags.Demo.Business
         private IEnumerable<PageData> FindPagesByPageTypeRecursively(PageReference pageLink, int pageTypeId)
         {
             var criteria = new PropertyCriteriaCollection
-                                {
+                               {
                                     new PropertyCriteria
                                     {
                                         Name = "PageTypeID",
@@ -75,7 +77,7 @@ namespace Geta.Tags.Demo.Business
                                         Condition = CompareCondition.Equal,
                                         Value = pageTypeId.ToString(CultureInfo.InvariantCulture)
                                     }
-                                };
+                               };
 
             // Include content providers serving content beneath the page link specified for the search
             if (_providerManager.ProviderMap.CustomProvidersExist)

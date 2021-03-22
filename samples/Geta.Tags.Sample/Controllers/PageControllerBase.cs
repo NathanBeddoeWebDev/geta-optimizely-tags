@@ -1,11 +1,12 @@
-using System.Web.Mvc;
-using Geta.Tags.Demo.Business;
-using Geta.Tags.Demo.Models.Pages;
-using Geta.Tags.Demo.Models.ViewModels;
+using Geta.Tags.Sample.Business;
+using Geta.Tags.Sample.Models.Pages;
+using Geta.Tags.Sample.Models.ViewModels;
 using EPiServer.Web.Mvc;
 using EPiServer.Shell.Security;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
-namespace Geta.Tags.Demo.Controllers
+namespace Geta.Tags.Sample.Controllers
 {
     /// <summary>
     /// All controllers that renders pages should inherit from this class so that we can
@@ -26,9 +27,9 @@ namespace Geta.Tags.Demo.Controllers
         /// forms authentication for login functionality we add an action for logging out to all
         /// controllers inheriting from this class.
         /// </remarks>
-        public ActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            UISignInManager.Service.SignOut();
+            await UISignInManager.Service.SignOutAsync();
             return RedirectToAction("Index");
         }
 

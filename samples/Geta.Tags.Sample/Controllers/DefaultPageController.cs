@@ -1,18 +1,18 @@
 using System;
-using System.Web.Mvc;
 using EPiServer;
 using EPiServer.Framework.DataAnnotations;
-using Geta.Tags.Demo.Models.Pages;
-using Geta.Tags.Demo.Models.ViewModels;
+using Geta.Tags.Sample.Models.Pages;
+using Geta.Tags.Sample.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Geta.Tags.Demo.Controllers
+namespace Geta.Tags.Sample.Controllers
 {
     /// <summary>
     /// Concrete controller that handles all page types that don't have their own specific controllers.
     /// </summary>
     /// <remarks>
     /// Note that as the view file name is hard coded it won't work with DisplayModes (ie Index.mobile.cshtml).
-    /// For page types requiring such views add specific controllers for them. Alterntively the Index action
+    /// For page types requiring such views add specific controllers for them. Alterntively the Index action 
     /// could be modified to set ControllerContext.RouteData.Values["controller"] to type name of the currentPage
     /// argument. That may however have side effects.
     /// </remarks>

@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using EPiServer;
 using EPiServer.Core;
 
-namespace Geta.Tags.Demo.Models.ViewModels
+namespace Geta.Tags.Sample.Models.ViewModels
 {
     public class ContentRenderingErrorModel
     {

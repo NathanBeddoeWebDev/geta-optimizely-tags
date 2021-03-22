@@ -1,6 +1,6 @@
-using EPiServer.DataAnnotations;
+﻿using EPiServer.DataAnnotations;
 
-namespace Geta.Tags.Demo.Models
+namespace Geta.Tags.Sample.Models
 {
     /// <summary>
     /// Attribute to set the default thumbnail for site page and block types
@@ -10,7 +10,7 @@ namespace Geta.Tags.Demo.Models
         /// <summary>
         /// The parameterless constructor will initialize a SiteImageUrl attribute with a default thumbnail
         /// </summary>
-        public SiteImageUrl() : base("~/Static/gfx/page-type-thumbnail.png")
+        public SiteImageUrl() : base("/gfx/page-type-thumbnail.png")
         {
 
         }

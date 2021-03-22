@@ -1,20 +1,19 @@
 using System;
-using System.Web.Mvc;
 using EPiServer.Core;
 using EPiServer.Core.Html.StringParsing;
-using EPiServer.Web;
-using EPiServer.Web.Mvc;
 using EPiServer.Web.Mvc.Html;
 using EPiServer;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Geta.Tags.Demo.Business.Rendering
+namespace Geta.Tags.Sample.Business.Rendering
 {
     /// <summary>
     /// Extends the default <see cref="ContentAreaRenderer"/> to apply custom CSS classes to each <see cref="ContentFragment"/>.
     /// </summary>
     public class AlloyContentAreaRenderer : ContentAreaRenderer
     {
-        protected override string GetContentAreaItemCssClass(HtmlHelper htmlHelper, ContentAreaItem contentAreaItem)
+        protected override string GetContentAreaItemCssClass(IHtmlHelper htmlHelper, ContentAreaItem contentAreaItem)
         {
             var baseItemClass = base.GetContentAreaItemCssClass(htmlHelper, contentAreaItem);
 

@@ -1,13 +1,13 @@
-using EPiServer.Core;
+﻿using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Demo.Controllers;
-using Geta.Tags.Demo.Models.Blocks;
-using Geta.Tags.Demo.Models.Pages;
+using Geta.Tags.Sample.Controllers;
+using Geta.Tags.Sample.Models.Blocks;
+using Geta.Tags.Sample.Models.Pages;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
 
-namespace Geta.Tags.Demo.Business.Rendering
+namespace Geta.Tags.Sample.Business.Rendering
 {
     [ServiceConfiguration(typeof(IViewTemplateModelRegistrator))]
     public class TemplateCoordinator : IViewTemplateModelRegistrator
@@ -39,9 +39,9 @@ namespace Geta.Tags.Demo.Business.Rendering
         {
             viewTemplateModelRegistrator.Add(typeof(JumbotronBlock), new TemplateModel
             {
+                Name = "JumbotronBlockWide",
                 Tags = new[] { Global.ContentAreaTags.FullWidth },
                 AvailableWithoutTag = false,
-                Path = BlockPath("JumbotronBlockWide.cshtml")
             });
 
             viewTemplateModelRegistrator.Add(typeof(TeaserBlock), new TemplateModel
@@ -49,12 +49,11 @@ namespace Geta.Tags.Demo.Business.Rendering
                 Name = "TeaserBlockWide",
                 Tags = new[] { Global.ContentAreaTags.TwoThirdsWidth, Global.ContentAreaTags.FullWidth },
                 AvailableWithoutTag = false,
-                Path = BlockPath("TeaserBlockWide.cshtml")
             });
 
             viewTemplateModelRegistrator.Add(typeof(SitePageData), new TemplateModel
             {
-                Name = "PagePartial",
+                Name = "Page",
                 Inherit = true,
                 AvailableWithoutTag = true,
                 Path = PagePartialPath("Page.cshtml")
@@ -62,7 +61,7 @@ namespace Geta.Tags.Demo.Business.Rendering
 
             viewTemplateModelRegistrator.Add(typeof(SitePageData), new TemplateModel
             {
-                Name = "PagePartialWide",
+                Name = "PageWide",
                 Inherit = true,
                 Tags = new[] { Global.ContentAreaTags.TwoThirdsWidth, Global.ContentAreaTags.FullWidth },
                 AvailableWithoutTag = false,
@@ -71,15 +70,14 @@ namespace Geta.Tags.Demo.Business.Rendering
 
             viewTemplateModelRegistrator.Add(typeof(ContactPage), new TemplateModel
             {
-                Name = "ContactPagePartialWide",
+                Name = "ContactPageWide",
                 Tags = new[] { Global.ContentAreaTags.TwoThirdsWidth, Global.ContentAreaTags.FullWidth },
                 AvailableWithoutTag = false,
-                Path = PagePartialPath("ContactPageWide.cshtml")
             });
 
             viewTemplateModelRegistrator.Add(typeof(IContentData), new TemplateModel
             {
-                Name = "NoRendererMessage",
+                Name = "NoRenderer",
                 Inherit = true,
                 Tags = new[] { Global.ContentAreaTags.NoRenderer },
                 AvailableWithoutTag = false,

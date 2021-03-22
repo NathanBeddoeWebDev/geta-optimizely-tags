@@ -13,9 +13,7 @@
 {
 <p>
     Find by tag name: @Html.TextBox("SearchString", ViewBag.SearchString as string)
-    <span class="epi-cmsButton">
-        <input type="submit" value="Search" class="epi-cmsButton-text epi-cmsButton-tools epi-cmsButton-Search" />
-    </span>
+    <input type="submit" value="Search" class="geta-submit-button"/>
 </p>
 }
 <p>
@@ -41,19 +39,23 @@
                         @Html.DisplayFor(x => item.GroupKey)
                     </td>
                     <td>
-                        <button>
-                            @Html.ActionLink("Edit", "Edit", new {tagId = item.Id, page = Model.PageNumber, searchString = ViewBag.SearchString})
-                        </button>
-                        <button>
-                            @using (Html.BeginForm("Delete", "GetaTagsAdmin", FormMethod.Post, new { id = "deleteForm-" + item.Id }))
-                            {
-                                @Html.AntiForgeryToken()
-                                @Html.Hidden("tagId", item.Id)
-                                @Html.Hidden("page", Model.PageNumber)
-                                @Html.Hidden("searchString", ViewBag.SearchString as string)
-                                <a href="javascript:document.getElementById('deleteForm-@item.Id').submit()" class="epi-cmsButton-text epi-cmsButton-tools epi-cmsButton-Delete">Delete</a>
-                            }
-                        </button>
+                        <div class="geta-action-buttons-container">
+                            <span>
+                                @Html.ActionLink("Edit", "Edit",
+                                    new {tagId = item.Id, page = Model.PageNumber, searchString = ViewBag.SearchString})
+                            </span>
+    
+                            <span>
+                                @using (Html.BeginForm("Delete", "GetaTagsAdmin", FormMethod.Post, new {id = "deleteForm-" + item.Id}))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.Hidden("tagId", item.Id)
+                                    @Html.Hidden("page", Model.PageNumber)
+                                    @Html.Hidden("searchString", ViewBag.SearchString as string)
+                                    <a href="javascript:document.getElementById('deleteForm-@item.Id').submit()" class="epi-cmsButton-text epi-cmsButton-tools epi-cmsButton-Delete">Delete</a>
+                                }
+                            </span>
+                        </div>
                     </td>
                 </tr>
             }

@@ -59,7 +59,7 @@ namespace Geta.Tags.Controllers
                 PageNumber = pageNumber,
                 PageCount = PageSize,
                 TotalItemCount = tags.Count,
-                Tags = tags.Skip(pageNumber * PageSize).Take(PageSize).ToList()
+                Tags = tags.Skip((pageNumber - 1) * PageSize).Take(PageSize).ToList()
             };
             return viewModel;
         }

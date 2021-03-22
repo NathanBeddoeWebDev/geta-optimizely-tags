@@ -42,7 +42,7 @@
                     </td>
                     <td>
                         <span class="epi-cmsButton">
-                            @*Ajax.ActionLink("Edit", "Edit", new { tagId = item.Id, page = Model.PageNumber, searchString = ViewBag.SearchString }, new AjaxOptions { UpdateTargetId = "ajaxBody" }, new { @class = "epi-cmsButton-text epi-cmsButton-tools epi-cmsButton-Edit" })*@
+                            Ajax.ActionLink("Edit", "Edit", new { tagId = item.Id, page = Model.PageNumber, searchString = ViewBag.SearchString }, new AjaxOptions { UpdateTargetId = "ajaxBody" }, new { @class = "epi-cmsButton-text epi-cmsButton-tools epi-cmsButton-Edit" })
                         </span>
                         <span class="epi-cmsButton">
                             @using (Html.BeginForm("Delete", "GetaTagsAdmin", FormMethod.Post, new { id = "deleteForm-" + item.Id }))

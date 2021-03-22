@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.0.0]
+
+### Changed
+
+- Migrated package to .NET 5.0
+
 ## [4.0.12]
 
 ### Fixed

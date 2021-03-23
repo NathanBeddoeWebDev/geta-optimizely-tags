@@ -1,12 +1,12 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using EPiServer.DataAbstraction;
 using EPiServer.Filters;
 using EPiServer.Framework.Localization;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Demo.Business;
-using Geta.Tags.Demo.Models.Blocks;
+using Geta.Tags.Sample.Business;
+using Geta.Tags.Sample.Models.Blocks;
 
-namespace Geta.Tags.Demo.Models.Pages
+namespace Geta.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Presents a news section including a list of the most recent articles on the site

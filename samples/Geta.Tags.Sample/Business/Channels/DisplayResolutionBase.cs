@@ -1,8 +1,8 @@
-using EPiServer.Framework.Localization;
+﻿using EPiServer.Framework.Localization;
 using EPiServer.ServiceLocation;
 using EPiServer.Web;
 
-namespace Geta.Tags.Demo.Business.Channels
+namespace Geta.Tags.Sample.Business.Channels
 {
     /// <summary>
     /// Base class for all resolution definitions

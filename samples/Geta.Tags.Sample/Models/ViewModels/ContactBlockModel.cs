@@ -1,10 +1,10 @@
-using System.Web;
-using System.ComponentModel.DataAnnotations;
-using Geta.Tags.Demo.Models.Pages;
+﻿using System.ComponentModel.DataAnnotations;
+using Geta.Tags.Sample.Models.Pages;
 using EPiServer.Web;
 using EPiServer.Core;
+using Microsoft.AspNetCore.Html;
 
-namespace Geta.Tags.Demo.Models.ViewModels
+namespace Geta.Tags.Sample.Models.ViewModels
 {
     public class ContactBlockModel
     {
@@ -12,7 +12,7 @@ namespace Geta.Tags.Demo.Models.ViewModels
         public ContentReference Image { get; set; }
         public string Heading { get; set; }
         public string LinkText { get; set; }
-        public IHtmlString LinkUrl { get; set; }
+        public IHtmlContent LinkUrl { get; set; }
         public bool ShowLink { get; set; }
         public ContactPage ContactPage { get; set; }
     }

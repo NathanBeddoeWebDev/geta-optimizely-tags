@@ -1,14 +1,14 @@
-using System.Web.Mvc;
-using Geta.Tags.Demo.Models.Pages;
-using Geta.Tags.Demo.Models.ViewModels;
+﻿using Geta.Tags.Sample.Models.Pages;
+using Geta.Tags.Sample.Models.ViewModels;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Geta.Tags.Demo.Controllers
+namespace Geta.Tags.Sample.Controllers
 {
     public class StartPageController : PageControllerBase<StartPage>
     {
-        public ActionResult Index(StartPage currentPage)
+        public IActionResult Index(StartPage currentPage)
         {
             var model = PageViewModel.Create(currentPage);
 

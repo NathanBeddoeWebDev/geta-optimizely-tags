@@ -1,6 +1,6 @@
-using Geta.Tags.Demo.Business.Rendering;
+﻿using Geta.Tags.Sample.Business.Rendering;
 
-namespace Geta.Tags.Demo.Models.Pages
+namespace Geta.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Used to logically group pages in the page tree
@@ -11,6 +11,6 @@ namespace Geta.Tags.Demo.Models.Pages
     [SiteImageUrl]
     public class ContainerPage : SitePageData, IContainerPage
     {
-
+        
     }
 }

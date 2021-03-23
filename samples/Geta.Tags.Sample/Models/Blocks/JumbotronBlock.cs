@@ -5,7 +5,7 @@ using EPiServer.Web;
 using EPiServer.Core;
 using EPiServer;
 
-namespace Geta.Tags.Demo.Models.Blocks
+namespace Geta.Tags.Sample.Models.Blocks
 {
     /// <summary>
     /// Used for a primary message on a page, commonly used on start pages and landing pages
@@ -23,7 +23,7 @@ namespace Geta.Tags.Demo.Models.Blocks
         [CultureSpecific]
         [UIHint(UIHint.Image)]
         public virtual ContentReference Image { get; set; }
-
+        
         /// <summary>
         /// Gets or sets a description for the image, for example used as the alt text for the image when rendered
         /// </summary>

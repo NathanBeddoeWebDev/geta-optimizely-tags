@@ -2,9 +2,9 @@
 // Licensed under Apache-2.0. See the LICENSE file in the project root for more information
 
 using System.Linq;
-using System.Web.Mvc;
 using EPiServer.ServiceLocation;
 using Geta.Tags.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Geta.Tags.Controllers
 {
@@ -41,7 +41,7 @@ namespace Geta.Tags.Controllers
                 .Take(10)
                 .ToList();
 
-            return Json(items, JsonRequestBehavior.AllowGet);
+            return Json(items);
         }
 
         private static string Normalize(string term)

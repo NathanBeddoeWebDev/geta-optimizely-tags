@@ -1,5 +1,5 @@
-
-namespace Geta.Tags.Demo.Models.ViewModels
+﻿
+namespace Geta.Tags.Sample.Models.ViewModels
 {
     /// <summary>
     /// View model for the video file

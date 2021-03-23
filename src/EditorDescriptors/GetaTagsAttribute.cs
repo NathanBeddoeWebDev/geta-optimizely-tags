@@ -9,12 +9,12 @@ using Geta.Tags.Attributes;
 using Geta.Tags.Helpers;
 using System;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 
 namespace Geta.Tags.EditorDescriptors
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class GetaTagsAttribute : Attribute, IMetadataAware
+    public class GetaTagsAttribute : Attribute, IDisplayMetadataProvider, IMetadataDetailsProvider
     {
         public bool AllowSpaces { get; set; }
         public bool CaseSensitive { get; set; }
@@ -32,14 +32,10 @@ namespace Geta.Tags.EditorDescriptors
             TagLimit = -1;
         }
 
-        public virtual void OnMetadataCreated(ModelMetadata metadata)
+        public virtual void CreateDisplayMetadata(DisplayMetadataProviderContext context)
         {
-            var extendedMetadata = metadata as ExtendedMetadata;
-
-            if (extendedMetadata == null)
-            {
+            if (!(context.DisplayMetadata.AdditionalValues["epi:extendedmetadata"] is ExtendedMetadata extendedMetadata))
                 return;
-            }
 
             var groupKeyAttribute = extendedMetadata
                 .Attributes

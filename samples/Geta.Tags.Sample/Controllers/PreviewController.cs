@@ -1,22 +1,22 @@
 using System.Linq;
-using System.Web.Mvc;
 using EPiServer.Core;
 using EPiServer.Framework.DataAnnotations;
 using EPiServer.Framework.Web;
-using Geta.Tags.Demo.Business;
-using Geta.Tags.Demo.Models.Pages;
-using Geta.Tags.Demo.Models.ViewModels;
+using Geta.Tags.Sample.Business;
+using Geta.Tags.Sample.Models.Pages;
+using Geta.Tags.Sample.Models.ViewModels;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
 using EPiServer;
+using Microsoft.AspNetCore.Mvc;
 using EPiServer.Framework.Web.Mvc;
 
-namespace Geta.Tags.Demo.Controllers
+namespace Geta.Tags.Sample.Controllers
 {
     /* Note: as the content area rendering on Alloy is customized we create ContentArea instances
-    * which we render in the preview view in order to provide editors with a preview which is as
-    * realistic as possible. In other contexts we could simply have passed the block to the
-    * view and rendered it using Html.RenderContentData */
+     * which we render in the preview view in order to provide editors with a preview which is as
+     * realistic as possible. In other contexts we could simply have passed the block to the
+     * view and rendered it using Html.RenderContentData */
     [TemplateDescriptor(
         Inherited = true,
         TemplateTypeCategory = TemplateTypeCategories.MvcController, //Required as controllers for blocks are registered as MvcPartialController by default
@@ -37,7 +37,7 @@ namespace Geta.Tags.Demo.Controllers
             _displayOptions = displayOptions;
         }
 
-        public ActionResult Index(IContent currentContent)
+        public IActionResult Index(IContent currentContent)
         {
             //As the layout requires a page for title etc we "borrow" the start page
             var startPage = _contentLoader.Get<StartPage>(SiteDefinition.Current.StartPage);
@@ -74,10 +74,10 @@ namespace Geta.Tags.Demo.Controllers
         private bool SupportsTag(IContent content, string tag)
         {
             var templateModel = _templateResolver.Resolve(HttpContext,
-                                    content.GetOriginalType(),
-                                    content,
-                                    TemplateTypeCategories.MvcPartial,
-                                    tag);
+                                      content.GetOriginalType(),
+                                      content,
+                                      TemplateTypeCategories.MvcPartial,
+                                      tag);
 
             return templateModel != null;
         }

@@ -1,9 +1,9 @@
-using System.ComponentModel.DataAnnotations;
-using Geta.Tags.Demo.Business.Rendering;
+﻿using System.ComponentModel.DataAnnotations;
+using Geta.Tags.Sample.Business.Rendering;
 using EPiServer.Web;
 using EPiServer.Core;
 
-namespace Geta.Tags.Demo.Models.Pages
+namespace Geta.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Represents contact details for a contact person
@@ -20,7 +20,7 @@ namespace Geta.Tags.Demo.Models.Pages
 
         [Display(GroupName = Global.GroupNames.Contact)]
         public virtual string Phone { get; set; }
-
+        
         [Display(GroupName = Global.GroupNames.Contact)]
         [EmailAddress]
         public virtual string Email { get; set; }

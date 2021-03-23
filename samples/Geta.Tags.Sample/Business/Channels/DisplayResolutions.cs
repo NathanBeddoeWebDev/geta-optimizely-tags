@@ -1,4 +1,4 @@
-namespace Geta.Tags.Demo.Business.Channels
+﻿namespace Geta.Tags.Sample.Business.Channels
 {
     /// <summary>
     /// Defines resolution for desktop displays

@@ -1,5 +1,5 @@
-
-namespace Geta.Tags.Demo.Models.Blocks
+﻿
+namespace Geta.Tags.Sample.Models.Blocks
 {
     /// <summary>
     /// Base class for all block types on the site

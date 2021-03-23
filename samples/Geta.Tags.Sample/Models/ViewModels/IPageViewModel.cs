@@ -1,7 +1,7 @@
-using EPiServer.Core;
-using Geta.Tags.Demo.Models.Pages;
+﻿using EPiServer.Core;
+using Geta.Tags.Sample.Models.Pages;
 
-namespace Geta.Tags.Demo.Models.ViewModels
+namespace Geta.Tags.Sample.Models.ViewModels
 {
     /// <summary>
     /// Defines common characteristics for view models for pages, including properties used by layout files.

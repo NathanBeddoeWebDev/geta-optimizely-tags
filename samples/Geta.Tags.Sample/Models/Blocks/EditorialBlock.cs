@@ -1,9 +1,9 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 
-namespace Geta.Tags.Demo.Models.Blocks
+namespace Geta.Tags.Sample.Models.Blocks
 {
     /// <summary>
     /// Used to insert editorial content edited using a rich-text editor

@@ -6,7 +6,7 @@
     <title>Geta.Tags</title>
     <authors>Geta Digital</authors>
     <owners>Geta Digital</owners>
-    <projectUrl>https://github.com/Geta/Tags</projectUrl>
+    <projectUrl>https://github.com/Geta/geta-optimizely-tags</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Easily add tags to your EPiServer content and use the powerful query engine to get back what you want.</description>
     <copyright>Copyright © 2021 Geta Digital</copyright>

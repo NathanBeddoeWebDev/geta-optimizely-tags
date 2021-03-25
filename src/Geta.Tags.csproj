@@ -1,14 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <AssemblyVersion>5.0.0</AssemblyVersion>
-        <FileVersion>5.0.0</FileVersion>
         <Configurations>Release;Debug</Configurations>
         <Platforms>AnyCPU</Platforms>
         <NuspecFile>Geta.Tags.nuspec</NuspecFile>
         <NuspecBasePath>$(ProjectDir)..\src\</NuspecBasePath>
         <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-        <PackageVersion>5.0.0</PackageVersion>
         <NuspecProperties>version=$(PackageVersion)</NuspecProperties>
         <RepositoryUrl>https://github.com/Geta/geta-optimizely-tags</RepositoryUrl>
     </PropertyGroup>

@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
     <PropertyGroup>
-        <Version>$(Version)</Version>
+        <Version>$(PackageVersion)</Version>
         <TargetFramework>net5.0</TargetFramework>
         <Configurations>Release;Debug</Configurations>
         <Platforms>AnyCPU</Platforms>

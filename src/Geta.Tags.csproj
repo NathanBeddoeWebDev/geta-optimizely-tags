@@ -10,6 +10,7 @@
         <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
         <PackageVersion>5.0.0</PackageVersion>
         <NuspecProperties>version=$(PackageVersion)</NuspecProperties>
+        <RepositoryUrl>https://github.com/Geta/geta-optimizely-tags</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="EPiServer.CMS.Core" Version="12.0.0-inte-020092" />

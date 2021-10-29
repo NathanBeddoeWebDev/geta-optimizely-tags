@@ -1,4 +1,4 @@
-namespace Geta.Tags.Demo.Models.Pages
+﻿namespace Geta.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Used primarily for publishing news articles on the website

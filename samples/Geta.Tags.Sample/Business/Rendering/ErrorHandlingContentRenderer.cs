@@ -1,15 +1,19 @@
 using System;
 using System.IO;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Mvc.Html;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.Security;
-using Geta.Tags.Demo.Models.ViewModels;
-using EPiServer.Web.Mvc;
 
-namespace Geta.Tags.Demo.Business.Rendering
+using Geta.Tags.Sample.Models.ViewModels;
+using EPiServer.Web.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Threading.Tasks;
+using EPiServer.Web;
+using Geta.Tags.Sample.Helpers;
+
+namespace Geta.Tags.Sample.Business.Rendering
 {
     /// <summary>
     /// Wraps an MvcContentRenderer and adds error handling to ensure that blocks and other content
@@ -21,6 +25,7 @@ namespace Geta.Tags.Demo.Business.Rendering
     public class ErrorHandlingContentRenderer : IContentRenderer
     {
         private readonly MvcContentRenderer _mvcRenderer;
+
         public ErrorHandlingContentRenderer(MvcContentRenderer mvcRenderer)
         {
             _mvcRenderer = mvcRenderer;
@@ -29,77 +34,37 @@ namespace Geta.Tags.Demo.Business.Rendering
         /// <summary>
         /// Renders the contentData using the wrapped renderer and catches common, non-critical exceptions.
         /// </summary>
-        public void Render(HtmlHelper helper, PartialRequest partialRequestHandler, IContentData contentData, TemplateModel templateModel)
+        public async Task RenderAsync(IHtmlHelper helper, IContentData contentData, TemplateModel templateModel)
         {
             try
             {
-                _mvcRenderer.Render(helper, partialRequestHandler, contentData, templateModel);
+                await _mvcRenderer.RenderAsync(helper, contentData, templateModel);
             }
-            catch (NullReferenceException ex)
+            catch (Exception ex) when (!Debugger.IsAttached)
             {
-                if (HttpContext.Current.IsDebuggingEnabled)
+                switch (ex)
                 {
-                    //If debug="true" we assume a developer is making the request
-                    throw;
+                    case NullReferenceException:
+                    case ArgumentException:
+                    case ApplicationException:
+                    case InvalidOperationException:
+                    case NotImplementedException:
+                    case IOException:
+                    case EPiServerException:
+                        HandlerError(helper, contentData, ex);
+                        break;
+                    default:
+                        throw;
                 }
-                HandlerError(helper, contentData, ex);
-            }
-            catch (ArgumentException ex)
-            {
-                if (HttpContext.Current.IsDebuggingEnabled)
-                {
-                    throw;
-                }
-                HandlerError(helper, contentData, ex);
-            }
-            catch (ApplicationException ex)
-            {
-                if (HttpContext.Current.IsDebuggingEnabled)
-                {
-                    throw;
-                }
-                HandlerError(helper, contentData, ex);
-            }
-            catch (InvalidOperationException ex)
-            {
-                if (HttpContext.Current.IsDebuggingEnabled)
-                {
-                    throw;
-                }
-                HandlerError(helper, contentData, ex);
-            }
-            catch (NotImplementedException ex)
-            {
-                if (HttpContext.Current.IsDebuggingEnabled)
-                {
-                    throw;
-                }
-                HandlerError(helper, contentData, ex);
-            }
-            catch (IOException ex)
-            {
-                if (HttpContext.Current.IsDebuggingEnabled)
-                {
-                    throw;
-                }
-                HandlerError(helper, contentData, ex);
-            }
-            catch (EPiServerException ex)
-            {
-                if (HttpContext.Current.IsDebuggingEnabled)
-                {
-                    throw;
-                }
-                HandlerError(helper, contentData, ex);
             }
         }
 
-        private void HandlerError(HtmlHelper helper, IContentData contentData, Exception renderingException)
+        private void HandlerError(IHtmlHelper helper, IContentData contentData, Exception renderingException)
         {
-            if (PrincipalInfo.HasEditAccess)
+            if (helper.ViewContext.IsInEditMode())
             {
                 var errorModel = new ContentRenderingErrorModel(contentData, renderingException);
-                helper.RenderPartial("TemplateError", errorModel);
+                helper.RenderPartialAsync("TemplateError", errorModel).GetAwaiter().GetResult();
             }
         }
     }

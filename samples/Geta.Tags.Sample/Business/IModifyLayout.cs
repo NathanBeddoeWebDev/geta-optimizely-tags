@@ -1,6 +1,6 @@
-using Geta.Tags.Demo.Models.ViewModels;
+﻿using Geta.Tags.Sample.Models.ViewModels;
 
-namespace Geta.Tags.Demo.Business
+namespace Geta.Tags.Sample.Business
 {
     /// <summary>
     /// Defines a method which may be invoked by PageContextActionFilter allowing controllers

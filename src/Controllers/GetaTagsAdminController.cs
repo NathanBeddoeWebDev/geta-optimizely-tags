@@ -5,25 +5,19 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web.Mvc;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.Data;
 using EPiServer.DataAccess;
 using EPiServer.Security;
-using EPiServer.ServiceLocation;
-using EPiServer.Shell;
 using Geta.Tags.Interfaces;
 using Geta.Tags.Models;
-using PagedList;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Geta.Tags.Controllers
 {
     [Authorize(Roles = "Administrators, WebAdmins, CmsAdmins")]
-    [EPiServer.PlugIn.GuiPlugIn(
-        Area = EPiServer.PlugIn.PlugInArea.AdminMenu,
-        Url = "/GetaTagsAdmin",
-        DisplayName = "Geta Tags Management")]
     public class GetaTagsAdminController : Controller
     {
         public static int PageSize { get; } = 30;
@@ -31,14 +25,7 @@ namespace Geta.Tags.Controllers
         private readonly ITagRepository _tagRepository;
         private readonly IContentRepository _contentRepository;
         private readonly ITagEngine _tagEngine;
-
-        public GetaTagsAdminController() : this(
-                ServiceLocator.Current.GetInstance<ITagRepository>(),
-                ServiceLocator.Current.GetInstance<IContentRepository>(),
-                ServiceLocator.Current.GetInstance<ITagEngine>())
-        {
-        }
-
+        
         public GetaTagsAdminController(
             ITagRepository tagRepository, IContentRepository contentRepository, ITagEngine tagEngine)
         {
@@ -47,6 +34,7 @@ namespace Geta.Tags.Controllers
             _tagEngine = tagEngine;
         }
 
+        [HttpGet]
         public ActionResult Index(string searchString, int? page)
         {
             var pageNumber = page ?? 1;
@@ -55,41 +43,43 @@ namespace Geta.Tags.Controllers
 
             if (string.IsNullOrEmpty(searchString) && (page == null || page == pageNumber))
             {
-                return View(GetViewPath("Index"), GetPagedTagList(tags, pageNumber, PageSize));
+                return View( GetPagedTagList(tags, pageNumber));
             }
 
             ViewBag.SearchString = searchString;
             tags = _tagRepository.GetAllTags().Where(s => s.Name.Contains(searchString)).ToList();
 
-            return View(GetViewPath("Index"), GetPagedTagList(tags, pageNumber, PageSize));
+            return View(GetPagedTagList(tags, pageNumber));
         }
 
-        private IPagedList<Tag> GetPagedTagList(IList<Tag> tags, int pageNumber, int pageSize)
+        private TagListViewModel GetPagedTagList(IList<Tag> tags, int pageNumber)
         {
-            var list = tags.ToPagedList(pageNumber, PageSize);
-            if (!list.Any() && pageNumber > 1)
+            var viewModel = new TagListViewModel
             {
-                return tags.ToPagedList(pageNumber - 1, PageSize);
-            }
-            return list;
+                PageNumber = pageNumber,
+                PageCount = (tags.Count + PageSize -1) / PageSize,
+                TotalItemCount = tags.Count,
+                Tags = tags.Skip((pageNumber - 1) * PageSize).Take(PageSize).ToList()
+            };
+            return viewModel;
         }
 
         public ActionResult Edit(string tagId, int? page, string searchString)
         {
             if (tagId == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             var tag = _tagRepository.GetTagById(Identity.Parse(tagId));
             if (tag == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             ViewBag.Page = page;
             ViewBag.SearchString = searchString;
-            return PartialView(GetViewPath("Edit"), tag);
+            return PartialView(tag);
         }
 
         [HttpPost]
@@ -98,7 +88,7 @@ namespace Geta.Tags.Controllers
         {
             if (id == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             var existingTag = _tagRepository.GetTagById(Identity.Parse(id));
@@ -171,12 +161,7 @@ namespace Geta.Tags.Controllers
                 return RedirectToAction("Index", new { page, searchString });
             }
 
-            return View(GetViewPath("Delete"));
-        }
-
-        private string GetViewPath(string viewName)
-        {
-            return Paths.ToClientResource(typeof(GetaTagsAdminController), "Views/Admin/" + viewName + ".cshtml");
+            return View();
         }
     }
 }

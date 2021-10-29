@@ -6,22 +6,28 @@
     <title>Geta.Tags</title>
     <authors>Geta Digital</authors>
     <owners>Geta Digital</owners>
-    <projectUrl>https://github.com/Geta/Tags</projectUrl>
+    <projectUrl>https://github.com/Geta/geta-optimizely-tags</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Easily add tags to your EPiServer content and use the powerful query engine to get back what you want.</description>
-    <copyright>Copyright © 2019 Geta</copyright>
+    <copyright>Copyright © 2021 Geta Digital</copyright>
     <tags>EPiServer Tags</tags>
     <iconUrl>http://cdn.geta.no/opensource/icons/geta-tags-icon.png</iconUrl>
     <repository type="git" url="URL" branch="BRANCH_NAME" commit="COMMIT" />
     <dependencies>
-      <dependency id="EPiServer.CMS.Core" version="[11.1.0, 12.0)" />
-      <dependency id="EPiServer.CMS.UI.Core" version="[11.1.0, 12.0)" />
-      <dependency id="PagedList.Mvc" version="4.5.0.0" />
+      <group targetFramework="net5.0">
+        <dependency id="EPiServer.CMS.UI.Core" version="[12.0.0-inte-020292]" />
+        <dependency id="EPiServer.CMS.Core" version="[12.0.0-inte-020092]" />
+        <dependency id="EPiServer.Framework" version="[12.0.0-inte-020092]" />
+      </group>     
     </dependencies>
+    <contentFiles>
+      <files include="any/any/modules/_protected/Geta.Tags/Geta.Tags.zip" buildAction="None" copyToOutput="true" />
+    </contentFiles>
   </metadata>
   <files>
-    <file src="bin\Geta.Tags.dll" target="lib\net45\" />
-    <file src="bin\Geta.Tags.zip" target="content\modules\_protected\Geta.Tags\" />
-    <file src="web.config.transform" target="content" />
+    <file src="bin\net5.0\Geta.Tags.dll" target="lib\net5.0\" />
+    <file src="bin\net5.0\Geta.Tags.Views.dll" target="lib\net5.0\" />
+    <file src="bin\net5.0\Geta.Tags.zip" target="contentFiles\any\any\modules\_protected\Geta.Tags" />
+    <file src="Geta.Tags.targets" target="build\net5.0\Geta.Tags.targets" />
   </files>
 </package>

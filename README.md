@@ -1,9 +1,9 @@
 # Geta Tags for EPiServer
 
 * Master<br>
-![](http://tc.geta.no/app/rest/builds/buildType:(id:GetaPackages_GetaTags_00ci),branch:master/statusIcon)
-[![Platform](https://img.shields.io/badge/Platform-.NET%204.6.1-blue.svg?style=flat)](https://msdn.microsoft.com/en-us/library/w0x726c2%28v=vs.110%29.aspx)
-[![Platform](https://img.shields.io/badge/EPiServer-%2011-orange.svg?style=flat)](http://world.episerver.com/cms/)
+![](http://tc.geta.no/app/rest/builds/buildType:(id:GetaPackages_OptimizelyTags_00ci),branch:master/statusIcon)
+[![Platform](https://img.shields.io/badge/Platform-.NET%205.0-blue.svg?style=flat)](https://msdn.microsoft.com/en-us/library/w0x726c2%28v=vs.110%29.aspx)
+[![Platform](https://img.shields.io/badge/EPiServer-%2012-orange.svg?style=flat)](http://world.episerver.com/cms/)
 
 ## Description
 
@@ -41,6 +41,11 @@ public virtual string Tags { get; set; }
 public virtual string Tags { get; set; }
 ```
 
+Register tags in Startup.cs using folllowing service extension 
+```csharp
+services.AddGetaTags();
+```
+
 Use ITagEngine to query for data:
 
 ```csharp
@@ -71,15 +76,22 @@ The following settings can currently be customized
 public virtual string Tags { get; set; }
 ```
 
+## Tags management
+
+Tags management panel is available via following url:
+
+```csharp 
+<project_url>/EPiServer/Geta.Tags/GetaTagsAdmin
+```
+
 ## Local development setup
 
-See description in [shared repository](https://github.com/Geta/package-shared/blob/master/README.md#local-development-set-up) regarding how to setup local development environment.
+Use Geta.Tags.Sample (Episerver 12 preview version) project for testing
 
-### Docker hostnames
+Administrator credentials:
 
-Instead of using the static IP addresses the following hostnames can be used out-of-the-box.
-
-- http://tags.getalocaltest.me
+Login: `administrator`
+Password: `Episerver123!`
 
 ## Package maintainer
 

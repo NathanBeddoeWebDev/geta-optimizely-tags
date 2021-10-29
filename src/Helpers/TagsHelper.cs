@@ -6,11 +6,10 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Globalization;
 using EPiServer.Web;
-using Geta.Tags.Attributes;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using Geta.Tags.Attributes;
 
 namespace Geta.Tags.Helpers
 {

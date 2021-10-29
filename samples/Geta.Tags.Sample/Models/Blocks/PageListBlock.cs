@@ -1,11 +1,11 @@
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Filters;
 
-namespace Geta.Tags.Demo.Models.Blocks
+namespace Geta.Tags.Sample.Models.Blocks
 {
     /// <summary>
     /// Used to insert a list of pages, for example a news list

@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Geta.Tags.Demo.Models.Blocks;
+using Geta.Tags.Sample.Models.Blocks;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using Geta.Tags.Demo.Models.Properties;
 
-namespace Geta.Tags.Demo.Models.Pages
+namespace Geta.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Used to present a single product

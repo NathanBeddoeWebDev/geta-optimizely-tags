@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using EPiServer.Core;
-using Geta.Tags.Demo.Models.Pages;
+using Geta.Tags.Sample.Models.Pages;
 
-namespace Geta.Tags.Demo.Models.ViewModels
+namespace Geta.Tags.Sample.Models.ViewModels
 {
     public class PageViewModel<T> : IPageViewModel<T> where T : SitePageData
     {

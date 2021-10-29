@@ -1,4 +1,4 @@
-namespace Geta.Tags.Demo.Models.Pages
+﻿namespace Geta.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Marker interface for search implementation

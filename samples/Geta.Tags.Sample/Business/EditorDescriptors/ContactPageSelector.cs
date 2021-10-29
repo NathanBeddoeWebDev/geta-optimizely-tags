@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using EPiServer.Core;
 using EPiServer.Shell.ObjectEditing;
 using EPiServer.Shell.ObjectEditing.EditorDescriptors;
 
-namespace Geta.Tags.Demo.Business.EditorDescriptors
+namespace Geta.Tags.Sample.Business.EditorDescriptors
 {
     /// <summary>
     /// Registers an editor to select a ContactPage for a PageReference property using a dropdown
@@ -15,9 +15,9 @@ namespace Geta.Tags.Demo.Business.EditorDescriptors
         public override void ModifyMetadata(ExtendedMetadata metadata, IEnumerable<Attribute> attributes)
         {
             SelectionFactoryType = typeof(ContactPageSelectionFactory);
-
+            
             ClientEditingClass = "epi-cms/contentediting/editors/SelectionEditor";
-
+  
             base.ModifyMetadata(metadata, attributes);
         }
     }

@@ -7,11 +7,10 @@ namespace Geta.Optimizely.Tags
 {
     public static class ServiceCollectionExtensions
     {
-        const string ModuleName = "Geta.Tags";
-        
+        const string ModuleName = "Geta.Optimizely.Tags";
+
         public static IServiceCollection AddGetaTags(this IServiceCollection services)
         {
-            services.AddCmsUI();
             services.Configure<ProtectedModuleOptions>(
                 pm =>
                 {
@@ -23,7 +22,7 @@ namespace Geta.Optimizely.Tags
                         });
                     }
                 });
-            
+
             return services;
         }
     }

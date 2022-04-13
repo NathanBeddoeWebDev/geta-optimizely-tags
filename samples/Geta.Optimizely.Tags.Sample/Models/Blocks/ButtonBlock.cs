@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using EPiServer.DataAbstraction;
 using EPiServer;
+using EPiServer.DataAbstraction;
 
-namespace Geta.Tags.Sample.Models.Blocks
+namespace Geta.Optimizely.Tags.Sample.Models.Blocks
 {
     /// <summary>
     /// Used to insert a link which is styled as a button

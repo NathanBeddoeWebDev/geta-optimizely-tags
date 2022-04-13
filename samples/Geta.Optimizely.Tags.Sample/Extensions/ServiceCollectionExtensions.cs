@@ -1,17 +1,12 @@
-﻿using Geta.Tags.Sample.Business.Rendering;
-using Geta.Tags.Sample.Business;
-using Geta.Tags.Sample.Business.Channels;
-using EPiServer.Authorization;
-using EPiServer.Cms.Shell.UI.Approvals.Notifications;
-using EPiServer.DependencyInjection;
-using EPiServer.Web;
-using Microsoft.AspNetCore.Hosting;
+﻿using EPiServer.Web;
+using Geta.Optimizely.Tags.Sample.Business;
+using Geta.Optimizely.Tags.Sample.Business.Channels;
+using Geta.Optimizely.Tags.Sample.Business.Rendering;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace Geta.Tags.Sample.Extensions
+namespace Geta.Optimizely.Tags.Sample.Extensions
 {
     public static class ServiceCollectionExtensions
     {

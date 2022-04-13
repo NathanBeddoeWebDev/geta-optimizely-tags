@@ -13,11 +13,11 @@ using EPiServer.DataAnnotations;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Attributes;
-using Geta.Tags.Helpers;
-using Geta.Tags.Interfaces;
+using Geta.Optimizely.Tags.Attributes;
+using Geta.Optimizely.Tags.Helpers;
+using Geta.Optimizely.Tags.Interfaces;
 
-namespace Geta.Tags
+namespace Geta.Optimizely.Tags
 {
     [ModuleDependency(typeof(ServiceContainerInitialization))]
     public class TagsModule : IInitializableModule

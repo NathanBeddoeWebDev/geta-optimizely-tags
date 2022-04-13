@@ -7,10 +7,10 @@ using System.Linq;
 using EPiServer.Data;
 using EPiServer.Data.Dynamic;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Interfaces;
-using Geta.Tags.Models;
+using Geta.Optimizely.Tags.Interfaces;
+using Geta.Optimizely.Tags.Models;
 
-namespace Geta.Tags.Implementations
+namespace Geta.Optimizely.Tags.Implementations
 {
     [ServiceConfiguration(typeof(ITagRepository))]
     public class TagRepository : ITagRepository

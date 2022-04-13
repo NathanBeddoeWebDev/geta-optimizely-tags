@@ -3,7 +3,7 @@ using EPiServer.DependencyInjection;
 using EPiServer.Shell.Modules;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Geta.Tags
+namespace Geta.Optimizely.Tags
 {
     public static class ServiceCollectionExtensions
     {

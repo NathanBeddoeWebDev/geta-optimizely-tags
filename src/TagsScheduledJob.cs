@@ -10,11 +10,11 @@ using EPiServer.DataAbstraction;
 using EPiServer.PlugIn;
 using EPiServer.Scheduler;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Interfaces;
-using Geta.Tags.Models;
-using Geta.Tags.Helpers;
+using Geta.Optimizely.Tags.Helpers;
+using Geta.Optimizely.Tags.Interfaces;
+using Geta.Optimizely.Tags.Models;
 
-namespace Geta.Tags
+namespace Geta.Optimizely.Tags
 {
     [ScheduledPlugIn(DisplayName = "Geta Tags maintenance", DefaultEnabled = true)]
     public class TagsScheduledJob : ScheduledJobBase

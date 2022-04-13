@@ -10,12 +10,12 @@ using EPiServer.Core;
 using EPiServer.Data;
 using EPiServer.DataAccess;
 using EPiServer.Security;
-using Geta.Tags.Interfaces;
-using Geta.Tags.Models;
+using Geta.Optimizely.Tags.Interfaces;
+using Geta.Optimizely.Tags.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Geta.Tags.Controllers
+namespace Geta.Optimizely.Tags.Controllers
 {
     [Authorize(Roles = "Administrators, WebAdmins, CmsAdmins")]
     public class GetaTagsAdminController : Controller

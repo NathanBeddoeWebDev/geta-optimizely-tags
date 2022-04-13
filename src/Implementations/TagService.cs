@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using EPiServer.Data;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Interfaces;
-using Geta.Tags.Models;
+using Geta.Optimizely.Tags.Interfaces;
+using Geta.Optimizely.Tags.Models;
 
-namespace Geta.Tags.Implementations
+namespace Geta.Optimizely.Tags.Implementations
 {
     [ServiceConfiguration(typeof(ITagService))]
     public class TagService : ITagService

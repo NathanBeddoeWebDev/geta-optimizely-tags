@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Geta.Tags.Models
+namespace Geta.Optimizely.Tags.Models
 {
     public class TagListViewModel
     {

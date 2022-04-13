@@ -1,17 +1,17 @@
 ﻿// Copyright (c) Geta Digital. All rights reserved.
 // Licensed under Apache-2.0. See the LICENSE file in the project root for more information
 
+using System;
+using System.Collections.Generic;
+using System.Globalization;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Globalization;
 using EPiServer.Web;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using Geta.Tags.Attributes;
+using Geta.Optimizely.Tags.Attributes;
 
-namespace Geta.Tags.Helpers
+namespace Geta.Optimizely.Tags.Helpers
 {
     public static class TagsHelper
     {

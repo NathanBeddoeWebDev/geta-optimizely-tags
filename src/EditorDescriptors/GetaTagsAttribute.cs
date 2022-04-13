@@ -1,17 +1,17 @@
 ﻿// Copyright (c) Geta Digital. All rights reserved.
 // Licensed under Apache-2.0. See the LICENSE file in the project root for more information
 
+using System;
+using System.Linq;
 using EPiServer.Cms.Shell.Extensions;
 using EPiServer.DataAnnotations;
 using EPiServer.Shell;
 using EPiServer.Shell.ObjectEditing;
-using Geta.Tags.Attributes;
-using Geta.Tags.Helpers;
-using System;
-using System.Linq;
+using Geta.Optimizely.Tags.Attributes;
+using Geta.Optimizely.Tags.Helpers;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 
-namespace Geta.Tags.EditorDescriptors
+namespace Geta.Optimizely.Tags.EditorDescriptors
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class GetaTagsAttribute : Attribute, IDisplayMetadataProvider, IMetadataDetailsProvider

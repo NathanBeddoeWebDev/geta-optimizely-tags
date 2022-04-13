@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using EPiServer.Data;
 using EPiServer.Data.Dynamic;
 
-namespace Geta.Tags.Models
+namespace Geta.Optimizely.Tags.Models
 {
     [EPiServerDataStore(AutomaticallyCreateStore = true, AutomaticallyRemapStore = true)]
     public class Tag

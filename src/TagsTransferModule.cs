@@ -10,9 +10,9 @@ using EPiServer.Enterprise.Transfer;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Models;
+using Geta.Optimizely.Tags.Models;
 
-namespace Geta.Tags
+namespace Geta.Optimizely.Tags
 {
     /// <summary>
     /// Module to transfer Tags content to mirrored servers when in a full staging/delivery configuration

@@ -1,15 +1,14 @@
 ﻿// Copyright (c) Geta Digital. All rights reserved.
 // Licensed under Apache-2.0. See the LICENSE file in the project root for more information
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using EPiServer.Data;
-using Geta.Tags.Models;
+using Geta.Optimizely.Tags.Models;
 
-namespace Geta.Tags.Interfaces
+namespace Geta.Optimizely.Tags.Interfaces
 {
-    using System;
-
     public interface ITagRepository
     {
         Tag GetTagById(Identity id);

@@ -3,10 +3,10 @@
 
 using System.Linq;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Interfaces;
+using Geta.Optimizely.Tags.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Geta.Tags.Controllers
+namespace Geta.Optimizely.Tags.Controllers
 {
     public class GetaTagsController : Controller
     {

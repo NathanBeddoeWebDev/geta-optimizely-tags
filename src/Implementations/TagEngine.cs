@@ -1,17 +1,17 @@
 ﻿// Copyright (c) Geta Digital. All rights reserved.
 // Licensed under Apache-2.0. See the LICENSE file in the project root for more information
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Interfaces;
-using Geta.Tags.Models;
-using System;
-using Geta.Tags.Helpers;
+using Geta.Optimizely.Tags.Helpers;
+using Geta.Optimizely.Tags.Interfaces;
+using Geta.Optimizely.Tags.Models;
 
-namespace Geta.Tags.Implementations
+namespace Geta.Optimizely.Tags.Implementations
 {
     [ServiceConfiguration(typeof(ITagEngine))]
     public class TagEngine : ITagEngine

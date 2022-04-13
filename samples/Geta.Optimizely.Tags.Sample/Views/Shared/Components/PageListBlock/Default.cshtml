@@ -1,4 +1,6 @@
-@model PageListModel
+@using Geta.Optimizely.Tags.Sample.Models.Pages
+@using Geta.Optimizely.Tags.Sample.Helpers
+@model Geta.Optimizely.Tags.Sample.Models.ViewModels.PageListModel
 @Html.FullRefreshPropertiesMetaData(new[] { "IncludePublishDate", "IncludeIntroduction", "Count", "SortOrder", "Root", "PageTypeFilter", "CategoryFilter", "Recursive" })
 <h2 @Html.EditAttributes(x => x.Heading)>@Model.Heading</h2>
 <hr />

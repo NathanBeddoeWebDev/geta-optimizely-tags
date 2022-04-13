@@ -1,4 +1,4 @@
-﻿namespace Geta.Tags.Sample.Models.Pages
+﻿namespace Geta.Optimizely.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Marker interface for search implementation

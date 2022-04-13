@@ -1,19 +1,19 @@
 using System.Linq;
-using Geta.Tags.Sample.Models.Pages;
-using Geta.Tags.Sample.Models.ViewModels;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.Data;
 using EPiServer.ServiceLocation;
 using EPiServer.Web;
 using EPiServer.Web.Routing;
+using Geta.Optimizely.Tags.Sample.Models.Pages;
+using Geta.Optimizely.Tags.Sample.Models.ViewModels;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 
-namespace Geta.Tags.Sample.Business
+namespace Geta.Optimizely.Tags.Sample.Business
 {
     [ServiceConfiguration]
     public class PageViewContextFactory

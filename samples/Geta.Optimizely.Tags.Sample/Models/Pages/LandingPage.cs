@@ -3,7 +3,7 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 
-namespace Geta.Tags.Sample.Models.Pages
+namespace Geta.Optimizely.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Used for campaign or landing pages, commonly used for pages linked in online advertising such as AdWords

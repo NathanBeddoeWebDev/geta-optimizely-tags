@@ -1,5 +1,6 @@
-﻿@using Geta.Tags.Sample
-@model IPageViewModel<SitePageData>
+﻿@using Geta.Optimizely.Tags.Sample.Models.Pages
+@using Geta.Optimizely.Tags.Sample
+@model Geta.Optimizely.Tags.Sample.Models.ViewModels.IPageViewModel<Geta.Optimizely.Tags.Sample.Models.Pages.SitePageData>
 @{ Layout = "~/Views/Shared/Layouts/_Root.cshtml"; }
 
 @{await Html.RenderPartialAsync("Breadcrumbs");}

@@ -1,20 +1,17 @@
-﻿using Geta.Tags.Sample.Models;
-using EPiServer.Core;
-using EPiServer.ServiceLocation;
-using EPiServer.Shell.Security;
-using EPiServer.Web.Routing;
-using System.Collections.Generic;
-using System.Linq;
-using EPiServer.Security;
-using EPiServer.DataAbstraction;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
-using Geta.Tags.Sample.Infrastructure;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using EPiServer.Authorization;
-using EPiServer.Framework.Security;
+using EPiServer.Core;
+using EPiServer.DataAbstraction;
+using EPiServer.Security;
+using EPiServer.ServiceLocation;
+using EPiServer.Shell.Security;
+using Geta.Optimizely.Tags.Sample.Infrastructure;
+using Geta.Optimizely.Tags.Sample.Models.Register;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Geta.Tags.Sample.Controllers
+namespace Geta.Optimizely.Tags.Sample.Controllers
 {
     /// <summary>
     /// Used to register a user for first time

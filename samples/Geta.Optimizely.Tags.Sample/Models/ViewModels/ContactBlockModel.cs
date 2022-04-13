@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Geta.Tags.Sample.Models.Pages;
-using EPiServer.Web;
 using EPiServer.Core;
+using EPiServer.Web;
+using Geta.Optimizely.Tags.Sample.Models.Pages;
 using Microsoft.AspNetCore.Html;
 
-namespace Geta.Tags.Sample.Models.ViewModels
+namespace Geta.Optimizely.Tags.Sample.Models.ViewModels
 {
     public class ContactBlockModel
     {

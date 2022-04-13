@@ -1,11 +1,10 @@
-using Geta.Tags.Sample.Models.Media;
-using Geta.Tags.Sample.Models.ViewModels;
-using EPiServer.Cms.AspNetCore.Mvc;
 using EPiServer.Web.Mvc;
 using EPiServer.Web.Routing;
+using Geta.Optimizely.Tags.Sample.Models.Media;
+using Geta.Optimizely.Tags.Sample.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Geta.Tags.Sample.Controllers
+namespace Geta.Optimizely.Tags.Sample.Components
 {
     /// <summary>
     /// Controller for the image file.

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Geta.Tags.Sample.Models
+namespace Geta.Optimizely.Tags.Sample.Models.Register
 {
     public class RegisterViewModel
     {

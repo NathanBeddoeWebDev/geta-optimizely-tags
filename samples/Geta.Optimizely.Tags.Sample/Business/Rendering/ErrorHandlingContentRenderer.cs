@@ -1,19 +1,15 @@
 using System;
+using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
-using EPiServer.Security;
-
-using Geta.Tags.Sample.Models.ViewModels;
 using EPiServer.Web.Mvc;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using System.Diagnostics;
+using Geta.Optimizely.Tags.Sample.Extensions;
+using Geta.Optimizely.Tags.Sample.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Threading.Tasks;
-using EPiServer.Web;
-using Geta.Tags.Sample.Helpers;
 
-namespace Geta.Tags.Sample.Business.Rendering
+namespace Geta.Optimizely.Tags.Sample.Business.Rendering
 {
     /// <summary>
     /// Wraps an MvcContentRenderer and adds error handling to ensure that blocks and other content

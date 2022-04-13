@@ -1,9 +1,9 @@
-﻿﻿using EPiServer.Core;
+﻿using System.ComponentModel.DataAnnotations;
+using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using System.ComponentModel.DataAnnotations;
 
-namespace Geta.Tags.Sample.Models.Pages
+namespace Geta.Optimizely.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Used for the pages mainly consisting of manually created content such as text, images, and blocks

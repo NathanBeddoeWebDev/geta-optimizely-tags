@@ -1,8 +1,8 @@
 ﻿using System;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Geta.Tags.Sample.Infrastructure
+namespace Geta.Optimizely.Tags.Sample.Infrastructure
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = true)]
     public class RegisterFirstAdminWithLocalRequestAttribute : Attribute, IAuthorizationFilter

@@ -4,9 +4,8 @@ using EPiServer.Core;
 using EPiServer.Filters;
 using EPiServer.Framework.Web;
 using EPiServer.ServiceLocation;
-using EPiServer;
 
-namespace Geta.Tags.Sample.Business
+namespace Geta.Optimizely.Tags.Sample.Business
 {
     /// <summary>
     /// Extension methods for content

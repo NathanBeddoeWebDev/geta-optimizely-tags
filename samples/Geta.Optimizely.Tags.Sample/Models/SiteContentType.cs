@@ -1,6 +1,6 @@
 ﻿using EPiServer.DataAnnotations;
 
-namespace Geta.Tags.Sample.Models
+namespace Geta.Optimizely.Tags.Sample.Models
 {
     /// <summary>
     /// Attribute used for site content types to set default attribute values

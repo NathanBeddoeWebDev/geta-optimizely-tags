@@ -1,13 +1,9 @@
-﻿using EPiServer.ServiceLocation;
+﻿using System.Threading.Tasks;
+using EPiServer.ServiceLocation;
 using EPiServer.Shell.Security;
-using Geta.Tags.Sample.Extensions;
-using EPiServer.Web;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Geta.Tags.Sample.Infrastructure
+namespace Geta.Optimizely.Tags.Sample.Infrastructure
 {
     public class AdministratorRegistrationPageMiddleware
     {

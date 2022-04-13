@@ -1,11 +1,11 @@
 using System.ComponentModel.DataAnnotations;
+using EPiServer;
+using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Web;
-using EPiServer.Core;
-using EPiServer;
 
-namespace Geta.Tags.Sample.Models.Blocks
+namespace Geta.Optimizely.Tags.Sample.Models.Blocks
 {
     /// <summary>
     /// Used for a primary message on a page, commonly used on start pages and landing pages

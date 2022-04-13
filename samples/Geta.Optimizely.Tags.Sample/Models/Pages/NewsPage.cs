@@ -3,10 +3,10 @@ using EPiServer.DataAbstraction;
 using EPiServer.Filters;
 using EPiServer.Framework.Localization;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Sample.Business;
-using Geta.Tags.Sample.Models.Blocks;
+using Geta.Optimizely.Tags.Sample.Business;
+using Geta.Optimizely.Tags.Sample.Models.Blocks;
 
-namespace Geta.Tags.Sample.Models.Pages
+namespace Geta.Optimizely.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Presents a news section including a list of the most recent articles on the site

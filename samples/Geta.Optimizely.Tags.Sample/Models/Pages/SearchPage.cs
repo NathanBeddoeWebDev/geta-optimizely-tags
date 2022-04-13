@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Geta.Tags.Sample.Models.Blocks;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
+using Geta.Optimizely.Tags.Sample.Models.Blocks;
 
-namespace Geta.Tags.Sample.Models.Pages
+namespace Geta.Optimizely.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Used to provide on-site search

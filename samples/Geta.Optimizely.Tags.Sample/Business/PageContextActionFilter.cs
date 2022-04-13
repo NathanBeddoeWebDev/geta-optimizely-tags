@@ -1,10 +1,10 @@
-using Geta.Tags.Sample.Models.Pages;
-using Geta.Tags.Sample.Models.ViewModels;
 using EPiServer.Web.Routing;
+using Geta.Optimizely.Tags.Sample.Models.Pages;
+using Geta.Optimizely.Tags.Sample.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Geta.Tags.Sample.Business
+namespace Geta.Optimizely.Tags.Sample.Business
 {
     /// <summary>
     /// Intercepts actions with view models of type IPageViewModel and populates the view models

@@ -1,6 +1,6 @@
 ﻿using EPiServer.DataAnnotations;
 
-namespace Geta.Tags.Sample.Models
+namespace Geta.Optimizely.Tags.Sample.Models
 {
     /// <summary>
     /// Attribute to set the default thumbnail for site page and block types

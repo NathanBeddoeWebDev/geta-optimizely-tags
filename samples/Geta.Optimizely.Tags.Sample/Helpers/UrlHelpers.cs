@@ -1,15 +1,11 @@
+using EPiServer;
 using EPiServer.Core;
-using EPiServer.Globalization;
 using EPiServer.ServiceLocation;
 using EPiServer.Web.Routing;
-using EPiServer;
-using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Geta.Tags.Sample.Helpers
+namespace Geta.Optimizely.Tags.Sample.Helpers
 {
     public static class UrlHelpers
     {

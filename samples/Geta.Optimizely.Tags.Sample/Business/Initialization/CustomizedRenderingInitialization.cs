@@ -1,13 +1,13 @@
 ﻿using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Sample.Business.Rendering;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 using EPiServer.Web.Mvc.Html;
+using Geta.Optimizely.Tags.Sample.Business.Rendering;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Geta.Tags.Sample.Business.Initialization
+namespace Geta.Optimizely.Tags.Sample.Business.Initialization
 {
     /// <summary>
     /// Module for customizing templates and rendering.

@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Threading.Tasks;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Sample.Business;
 using EPiServer.Web.Mvc.Html;
-using EPiServer;
-using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.AspNetCore.Mvc.Razor;
-using System.Text.Encodings.Web;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Threading.Tasks;
 using EPiServer.Web.Routing;
+using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Geta.Tags.Sample.Helpers
+namespace Geta.Optimizely.Tags.Sample.Helpers
 {
     public static class HtmlHelpers
     {

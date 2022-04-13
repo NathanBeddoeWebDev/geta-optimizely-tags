@@ -1,13 +1,13 @@
 ﻿using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.ServiceLocation;
-using Geta.Tags.Sample.Controllers;
-using Geta.Tags.Sample.Models.Blocks;
-using Geta.Tags.Sample.Models.Pages;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
+using Geta.Optimizely.Tags.Sample.Controllers;
+using Geta.Optimizely.Tags.Sample.Models.Blocks;
+using Geta.Optimizely.Tags.Sample.Models.Pages;
 
-namespace Geta.Tags.Sample.Business.Rendering
+namespace Geta.Optimizely.Tags.Sample.Business.Rendering
 {
     [ServiceConfiguration(typeof(IViewTemplateModelRegistrator))]
     public class TemplateCoordinator : IViewTemplateModelRegistrator

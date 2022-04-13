@@ -1,5 +1,5 @@
 ﻿
-namespace Geta.Tags.Sample.Models.ViewModels
+namespace Geta.Optimizely.Tags.Sample.Models.ViewModels
 {
     /// <summary>
     /// View model for the image file

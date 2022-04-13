@@ -1,12 +1,12 @@
-using Geta.Tags.Sample.Business;
-using Geta.Tags.Sample.Models.Pages;
-using Geta.Tags.Sample.Models.ViewModels;
-using EPiServer.Web.Mvc;
-using EPiServer.Shell.Security;
-using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using EPiServer.Shell.Security;
+using EPiServer.Web.Mvc;
+using Geta.Optimizely.Tags.Sample.Business;
+using Geta.Optimizely.Tags.Sample.Models.Pages;
+using Geta.Optimizely.Tags.Sample.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Geta.Tags.Sample.Controllers
+namespace Geta.Optimizely.Tags.Sample.Controllers
 {
     /// <summary>
     /// All controllers that renders pages should inherit from this class so that we can

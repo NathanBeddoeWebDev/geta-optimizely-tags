@@ -1,16 +1,15 @@
-﻿using EPiServer.Core;
-using Geta.Tags.Sample.Models.Blocks;
-using Geta.Tags.Sample.Models.Pages;
-using Geta.Tags.Sample.Models.ViewModels;
+﻿using EPiServer;
+using EPiServer.Core;
 using EPiServer.Web;
-using EPiServer;
 using EPiServer.Web.Mvc;
-using Microsoft.AspNetCore.Mvc;
+using Geta.Optimizely.Tags.Sample.Helpers;
+using Geta.Optimizely.Tags.Sample.Models.Blocks;
+using Geta.Optimizely.Tags.Sample.Models.Pages;
+using Geta.Optimizely.Tags.Sample.Models.ViewModels;
 using Microsoft.AspNetCore.Html;
-using Geta.Tags.Sample.Helpers;
-using EPiServer.Cms.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Geta.Tags.Sample.Controllers
+namespace Geta.Optimizely.Tags.Sample.Components
 {
     public class ContactBlockViewComponent : BlockComponent<ContactBlock>
     {

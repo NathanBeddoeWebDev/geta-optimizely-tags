@@ -9,7 +9,6 @@ using EPiServer.DataAbstraction;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.Framework.Localization;
-using EPiServer.Globalization;
 using EPiServer.ServiceLocation;
 using EPiServer.Shell;
 using EPiServer.Shell.Search;
@@ -17,7 +16,7 @@ using EPiServer.Web;
 using EPiServer.Web.Routing;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Geta.Tags.Sample.Business
+namespace Geta.Optimizely.Tags.Sample.Business
 {
     public class FakeSearchProvider: ContentSearchProviderBase<PageData, PageType>
     {

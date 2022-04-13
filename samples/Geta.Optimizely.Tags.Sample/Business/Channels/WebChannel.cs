@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Wangkanai.Detection;
 
-namespace Geta.Tags.Sample.Business.Channels
+namespace Geta.Optimizely.Tags.Sample.Business.Channels
 {
     /// <summary>
     /// Defines the 'Web' content channel

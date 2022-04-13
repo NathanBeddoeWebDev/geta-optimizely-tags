@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
+﻿using System.Net;
+using Microsoft.AspNetCore.Http;
 
-namespace Geta.Tags.Sample.Extensions
+namespace Geta.Optimizely.Tags.Sample.Extensions
 {
     public static class HttpContextExtensions
     {

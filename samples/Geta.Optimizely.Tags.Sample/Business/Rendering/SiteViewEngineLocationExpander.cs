@@ -1,8 +1,7 @@
-using Geta.Tags.Sample.Business.Rendering;
-using Microsoft.AspNetCore.Mvc.Razor;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Razor;
 
-namespace Geta.Tags.Sample.Business.Rendering
+namespace Geta.Optimizely.Tags.Sample.Business.Rendering
 {
 
     public class SiteViewEngineLocationExpander : IViewLocationExpander

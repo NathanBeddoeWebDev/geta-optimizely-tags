@@ -1,8 +1,8 @@
 ﻿using EPiServer.SpecializedProperties;
-using Geta.Tags.Sample.Models.Blocks;
+using Geta.Optimizely.Tags.Sample.Models.Blocks;
 using Microsoft.AspNetCore.Html;
 
-namespace Geta.Tags.Sample.Models.ViewModels
+namespace Geta.Optimizely.Tags.Sample.Models.ViewModels
 {
     public class LayoutModel
     {

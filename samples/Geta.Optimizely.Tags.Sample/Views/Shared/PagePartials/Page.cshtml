@@ -1,5 +1,6 @@
 @using EPiServer.Core
-@model SitePageData
+@using Geta.Optimizely.Tags.Sample.Helpers
+@model Geta.Optimizely.Tags.Sample.Models.Pages.SitePageData
 
 <div class="border">
     @using(Html.BeginConditionalLink(Model.HasTemplate(), Url.PageLinkUrl(Model), Model.PageName))

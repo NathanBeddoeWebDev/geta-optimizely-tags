@@ -4,7 +4,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Web;
 
-namespace Geta.Tags.Sample.Models.Blocks
+namespace Geta.Optimizely.Tags.Sample.Models.Blocks
 {
     /// <summary>
     /// Used to provide a stylized entry point to a page on the site

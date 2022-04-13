@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using EPiServer.Core;
-using Geta.Tags.Sample.Models.Blocks;
+using Geta.Optimizely.Tags.Sample.Models.Blocks;
 
-namespace Geta.Tags.Sample.Models.ViewModels
+namespace Geta.Optimizely.Tags.Sample.Models.ViewModels
 {
     public class PageListModel
     {

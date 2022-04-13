@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Geta.Tags.Sample.Models
+namespace Geta.Optimizely.Tags.Sample.Models
 {
     public class LoginViewModel
     {

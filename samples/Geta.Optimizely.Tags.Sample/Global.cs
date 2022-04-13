@@ -1,8 +1,8 @@
-﻿using EPiServer.DataAnnotations;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using EPiServer.DataAnnotations;
 
-namespace Geta.Tags.Sample
+namespace Geta.Optimizely.Tags.Sample
 {
 
     public class Global

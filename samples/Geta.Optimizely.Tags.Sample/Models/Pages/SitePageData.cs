@@ -1,13 +1,13 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using Geta.Tags.Sample.Business.Rendering;
-using EPiServer.Web;
 using EPiServer.SpecializedProperties;
-using System.Collections.Generic;
+using EPiServer.Web;
+using Geta.Optimizely.Tags.Sample.Business.Rendering;
 
-namespace Geta.Tags.Sample.Models.Pages
+namespace Geta.Optimizely.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Base class for all page types

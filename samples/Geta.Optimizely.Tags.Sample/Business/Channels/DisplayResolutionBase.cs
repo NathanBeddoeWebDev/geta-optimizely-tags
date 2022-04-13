@@ -2,7 +2,7 @@
 using EPiServer.ServiceLocation;
 using EPiServer.Web;
 
-namespace Geta.Tags.Sample.Business.Channels
+namespace Geta.Optimizely.Tags.Sample.Business.Channels
 {
     /// <summary>
     /// Base class for all resolution definitions

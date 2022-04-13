@@ -3,7 +3,7 @@ using System.Linq;
 using EPiServer.ServiceLocation;
 using EPiServer.Shell.ObjectEditing;
 
-namespace Geta.Tags.Sample.Business.EditorDescriptors
+namespace Geta.Optimizely.Tags.Sample.Business.EditorDescriptors
 {
     /// <summary>
     /// Provides a list of options corresponding to ContactPage pages on the site

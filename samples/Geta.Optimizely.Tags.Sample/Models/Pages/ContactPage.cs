@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Geta.Tags.Sample.Business.Rendering;
-using EPiServer.Web;
 using EPiServer.Core;
+using EPiServer.Web;
+using Geta.Optimizely.Tags.Sample.Business.Rendering;
 
-namespace Geta.Tags.Sample.Models.Pages
+namespace Geta.Optimizely.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Represents contact details for a contact person

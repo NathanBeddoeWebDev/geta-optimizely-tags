@@ -1,17 +1,17 @@
 using System.Linq;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Framework.DataAnnotations;
 using EPiServer.Framework.Web;
-using Geta.Tags.Sample.Business;
-using Geta.Tags.Sample.Models.Pages;
-using Geta.Tags.Sample.Models.ViewModels;
+using EPiServer.Framework.Web.Mvc;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
-using EPiServer;
+using Geta.Optimizely.Tags.Sample.Business;
+using Geta.Optimizely.Tags.Sample.Models.Pages;
+using Geta.Optimizely.Tags.Sample.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using EPiServer.Framework.Web.Mvc;
 
-namespace Geta.Tags.Sample.Controllers
+namespace Geta.Optimizely.Tags.Sample.Controllers
 {
     /* Note: as the content area rendering on Alloy is customized we create ContentArea instances
      * which we render in the preview view in order to provide editors with a preview which is as

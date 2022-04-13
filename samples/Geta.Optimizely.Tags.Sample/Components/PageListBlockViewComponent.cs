@@ -1,16 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Filters;
-using Geta.Tags.Sample.Business;
-using Geta.Tags.Sample.Models.Blocks;
-using Geta.Tags.Sample.Models.ViewModels;
 using EPiServer.Web.Mvc;
-using EPiServer;
+using Geta.Optimizely.Tags.Sample.Business;
+using Geta.Optimizely.Tags.Sample.Models.Blocks;
+using Geta.Optimizely.Tags.Sample.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using EPiServer.Cms.AspNetCore.Mvc;
 
-namespace Geta.Tags.Sample.Controllers
+namespace Geta.Optimizely.Tags.Sample.Components
 {
     public class PageListBlockViewComponent : BlockComponent<PageListBlock>
     {

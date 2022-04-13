@@ -1,6 +1,6 @@
-﻿using Geta.Tags.Sample.Business.Rendering;
+﻿using Geta.Optimizely.Tags.Sample.Business.Rendering;
 
-namespace Geta.Tags.Sample.Models.Pages
+namespace Geta.Optimizely.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Used to logically group pages in the page tree

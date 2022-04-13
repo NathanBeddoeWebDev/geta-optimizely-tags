@@ -3,7 +3,7 @@ using EPiServer.DataAnnotations;
 using EPiServer.Framework.Blobs;
 using EPiServer.Framework.DataAnnotations;
 
-namespace Geta.Tags.Sample.Models.Media
+namespace Geta.Optimizely.Tags.Sample.Models.Media
 {
     [ContentType(GUID = "F522B459-EB27-462C-B216-989FC7FF9448")]
     [MediaDescriptor(ExtensionString = "svg")]

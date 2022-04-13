@@ -1,10 +1,9 @@
 using System.Linq;
-using Geta.Tags.Sample.Controllers;
-using Geta.Tags.Sample.Models.Pages;
-using Geta.Tags.Sample.Models.ViewModels;
+using Geta.Optimizely.Tags.Sample.Models.Pages;
+using Geta.Optimizely.Tags.Sample.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Geta.Tags.Sample.Controllers
+namespace Geta.Optimizely.Tags.Sample.Controllers
 {
     public class SearchPageController : PageControllerBase<SearchPage>
     {

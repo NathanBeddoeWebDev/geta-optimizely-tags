@@ -1,8 +1,7 @@
-﻿using EPiServer.Editor;
-using EPiServer.Shell;
-using Geta.Tags.Sample.Models.Pages;
+﻿using EPiServer.Shell;
+using Geta.Optimizely.Tags.Sample.Models.Pages;
 
-namespace Geta.Tags.Sample.Business.UIDescriptors
+namespace Geta.Optimizely.Tags.Sample.Business.UIDescriptors
 {
     /// <summary>
     /// Describes how the UI should appear for <see cref="ContainerPage"/> content.

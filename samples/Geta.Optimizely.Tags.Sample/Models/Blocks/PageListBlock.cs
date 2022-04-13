@@ -5,7 +5,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Filters;
 
-namespace Geta.Tags.Sample.Models.Blocks
+namespace Geta.Optimizely.Tags.Sample.Models.Blocks
 {
     /// <summary>
     /// Used to insert a list of pages, for example a news list

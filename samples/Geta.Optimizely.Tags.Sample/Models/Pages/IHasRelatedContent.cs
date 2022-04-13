@@ -1,6 +1,6 @@
 using EPiServer.Core;
 
-namespace Geta.Tags.Sample.Models.Pages
+namespace Geta.Optimizely.Tags.Sample.Models.Pages
 {
     public interface IHasRelatedContent
     {

@@ -3,9 +3,9 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
-using Geta.Tags.Sample.Models.Blocks;
+using Geta.Optimizely.Tags.Sample.Models.Blocks;
 
-namespace Geta.Tags.Sample.Models.Pages
+namespace Geta.Optimizely.Tags.Sample.Models.Pages
 {
     /// <summary>
     /// Used for the site's start page and also acts as a container for site settings

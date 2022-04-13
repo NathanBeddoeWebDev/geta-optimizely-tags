@@ -1,8 +1,7 @@
-﻿using System;
-using EPiServer.Core;
-using Geta.Tags.Sample.Models.Pages;
+﻿using EPiServer.Core;
+using Geta.Optimizely.Tags.Sample.Models.Pages;
 
-namespace Geta.Tags.Sample.Models.ViewModels
+namespace Geta.Optimizely.Tags.Sample.Models.ViewModels
 {
     public class PageViewModel<T> : IPageViewModel<T> where T : SitePageData
     {

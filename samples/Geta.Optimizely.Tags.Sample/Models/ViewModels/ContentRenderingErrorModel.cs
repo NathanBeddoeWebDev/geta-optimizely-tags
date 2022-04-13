@@ -2,7 +2,7 @@
 using EPiServer;
 using EPiServer.Core;
 
-namespace Geta.Tags.Sample.Models.ViewModels
+namespace Geta.Optimizely.Tags.Sample.Models.ViewModels
 {
     public class ContentRenderingErrorModel
     {

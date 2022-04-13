@@ -1,12 +1,9 @@
-using System;
-using Geta.Tags.Sample.Controllers;
 using EPiServer.Web;
-using EPiServer.Web.Routing;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Geta.Tags.Sample.Helpers
+namespace Geta.Optimizely.Tags.Sample.Extensions
 {
     /// <summary>
     /// Extension methods on request Context such as et/Set Node, Lang, Controller

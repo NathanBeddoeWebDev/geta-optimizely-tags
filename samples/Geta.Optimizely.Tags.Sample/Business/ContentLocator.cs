@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Geta.Tags.Sample.Models.Pages;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.Filters;
 using EPiServer.ServiceLocation;
 using EPiServer.Shell.Configuration;
 using EPiServer.Web;
+using Geta.Optimizely.Tags.Sample.Models.Pages;
 
-namespace Geta.Tags.Sample.Business
+namespace Geta.Optimizely.Tags.Sample.Business
 {
     [ServiceConfiguration(Lifecycle = ServiceInstanceScope.Singleton)]
     public class ContentLocator

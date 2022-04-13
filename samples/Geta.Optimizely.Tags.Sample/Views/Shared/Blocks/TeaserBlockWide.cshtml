@@ -1,10 +1,12 @@
-@model TeaserBlock
+@using Geta.Optimizely.Tags.Sample.Extensions
+@using Geta.Optimizely.Tags.Sample.Helpers
+@model Geta.Optimizely.Tags.Sample.Models.Blocks.TeaserBlock
 
 <div class="border">
     @*Link the teaser block only if a link has been set and not displayed in preview*@
     @using(Html.BeginConditionalLink(
-        !ContentReference.IsNullOrEmpty(Model.Link) && !(Html.ViewContext.IsPreviewMode()), 
-        Url.PageLinkUrl(Model.Link), 
+        !ContentReference.IsNullOrEmpty(Model.Link) && !(Html.ViewContext.IsPreviewMode()),
+        Url.PageLinkUrl(Model.Link),
         Model.Heading))
     {
         <div class="media">

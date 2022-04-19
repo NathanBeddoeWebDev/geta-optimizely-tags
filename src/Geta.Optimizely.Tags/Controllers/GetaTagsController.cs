@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Geta.Optimizely.Tags.Controllers
 {
+    [ApiController]
     public class GetaTagsController : Controller
     {
         private readonly ITagService _tagService;
@@ -17,7 +18,9 @@ namespace Geta.Optimizely.Tags.Controllers
             _tagService = tagService;
         }
 
-        public JsonResult Index(string term, string groupKey = null)
+        [HttpGet]
+        [Route("/getatags")]
+        public ActionResult Index(string term, string groupKey = null)
         {
             var normalized = Normalize(term);
             var tags = _tagService.GetAllTags();
@@ -37,7 +40,7 @@ namespace Geta.Optimizely.Tags.Controllers
                 .Take(10)
                 .ToList();
 
-            return Json(items);
+            return Ok(items);
         }
 
         private static string Normalize(string term)

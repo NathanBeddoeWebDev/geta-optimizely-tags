@@ -6,13 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using EPiServer.Data;
 using EPiServer.Data.Dynamic;
-using EPiServer.ServiceLocation;
 using Geta.Optimizely.Tags.Interfaces;
 using Geta.Optimizely.Tags.Models;
 
 namespace Geta.Optimizely.Tags.Implementations
 {
-    [ServiceConfiguration(typeof(ITagRepository))]
     public class TagRepository : ITagRepository
     {
         private static DynamicDataStore TagStore => typeof(Tag).GetOrCreateStore();

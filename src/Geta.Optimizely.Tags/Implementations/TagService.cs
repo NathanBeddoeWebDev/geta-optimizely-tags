@@ -5,13 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using EPiServer.Data;
-using EPiServer.ServiceLocation;
 using Geta.Optimizely.Tags.Interfaces;
 using Geta.Optimizely.Tags.Models;
 
 namespace Geta.Optimizely.Tags.Implementations
 {
-    [ServiceConfiguration(typeof(ITagService))]
     public class TagService : ITagService
     {
         private readonly ITagRepository _tagRepository;

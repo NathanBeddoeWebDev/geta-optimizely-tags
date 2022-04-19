@@ -1,16 +1,21 @@
 ﻿using System.Linq;
-using EPiServer.DependencyInjection;
 using EPiServer.Shell.Modules;
+using Geta.Optimizely.Tags.Implementations;
+using Geta.Optimizely.Tags.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Geta.Optimizely.Tags
+namespace Geta.Optimizely.Tags.Infrastructure.Configuration
 {
     public static class ServiceCollectionExtensions
     {
-        const string ModuleName = "Geta.Optimizely.Tags";
+        private const string ModuleName = "Geta.Optimizely.Tags";
 
         public static IServiceCollection AddGetaTags(this IServiceCollection services)
         {
+            services.AddTransient<ITagService, TagService>();
+            services.AddTransient<ITagRepository, TagRepository>();
+            services.AddTransient<ITagEngine, TagEngine>();
+
             services.Configure<ProtectedModuleOptions>(
                 pm =>
                 {

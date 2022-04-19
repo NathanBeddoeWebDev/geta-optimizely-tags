@@ -21,6 +21,7 @@ using Geta.NotFoundHandler.Infrastructure.Configuration;
 using Geta.NotFoundHandler.Infrastructure.Initialization;
 using Geta.NotFoundHandler.Optimizely;
 using Geta.Optimizely.Tags.Infrastructure.Configuration;
+using Geta.Optimizely.Tags.Infrastructure.Initialization;
 using Jhoose.Security.DependencyInjection;
 using Mediachase.Commerce.Anonymous;
 using Mediachase.Commerce.Orders;
@@ -176,6 +177,8 @@ namespace Foundation
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseGetaTags();
 
             app.UseAnonymousId();
             app.UseStaticFiles();

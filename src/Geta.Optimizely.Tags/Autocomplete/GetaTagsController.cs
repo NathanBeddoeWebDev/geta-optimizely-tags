@@ -2,11 +2,10 @@
 // Licensed under Apache-2.0. See the LICENSE file in the project root for more information
 
 using System.Linq;
-using EPiServer.ServiceLocation;
-using Geta.Optimizely.Tags.Interfaces;
+using Geta.Optimizely.Tags.Core;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Geta.Optimizely.Tags.Controllers
+namespace Geta.Optimizely.Tags.Autocomplete
 {
     [ApiController]
     public class GetaTagsController : Controller

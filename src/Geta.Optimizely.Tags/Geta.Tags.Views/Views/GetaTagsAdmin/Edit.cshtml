@@ -1,6 +1,6 @@
 ﻿@using EPiServer.Shell
 
-@model Geta.Optimizely.Tags.Models.Tag
+@model Geta.Optimizely.Tags.Core.Tag
 @{
     ViewBag.Title = "Edit tag";
 }
@@ -20,7 +20,7 @@
         @Html.LabelFor(model => model.GroupKey) <br />@Html.TextBoxFor(model => model.GroupKey)
     </p>
     <p>
-        @Html.CheckBoxFor(model => model.checkedEditContentTags) Check this box to edit existing tags in the content
+        @Html.CheckBoxFor(model => model.CheckedEditContentTags) Check this box to edit existing tags in the content
     </p>
     <div class="epi-buttonContainer">
         <span class="epi-cmsButton">

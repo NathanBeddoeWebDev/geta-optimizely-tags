@@ -6,11 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using EPiServer;
 using EPiServer.Core;
-using Geta.Optimizely.Tags.Helpers;
-using Geta.Optimizely.Tags.Interfaces;
-using Geta.Optimizely.Tags.Models;
 
-namespace Geta.Optimizely.Tags.Implementations
+namespace Geta.Optimizely.Tags.Core
 {
     public class TagEngine : ITagEngine
     {

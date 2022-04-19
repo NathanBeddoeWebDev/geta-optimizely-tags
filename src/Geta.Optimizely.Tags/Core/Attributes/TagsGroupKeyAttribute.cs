@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Geta.Optimizely.Tags.Attributes
+namespace Geta.Optimizely.Tags.Core.Attributes
 {
     [AttributeUsage(AttributeTargets.Property)]
     public class TagsGroupKeyAttribute : Attribute

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Geta.Optimizely.Tags.Core;
 
 namespace Geta.Optimizely.Tags.Models
 {

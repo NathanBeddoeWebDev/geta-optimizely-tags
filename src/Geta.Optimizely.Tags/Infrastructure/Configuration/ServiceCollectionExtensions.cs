@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using EPiServer.Shell.Modules;
-using Geta.Optimizely.Tags.Implementations;
-using Geta.Optimizely.Tags.Interfaces;
+using Geta.Optimizely.Tags.Core;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Geta.Optimizely.Tags.Infrastructure.Configuration

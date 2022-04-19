@@ -6,10 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using EPiServer.Data;
 using EPiServer.Data.Dynamic;
-using Geta.Optimizely.Tags.Interfaces;
-using Geta.Optimizely.Tags.Models;
 
-namespace Geta.Optimizely.Tags.Implementations
+namespace Geta.Optimizely.Tags.Core
 {
     public class TagRepository : ITagRepository
     {

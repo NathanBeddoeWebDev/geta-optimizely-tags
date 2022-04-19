@@ -3,9 +3,8 @@
 
 using System.Collections.Generic;
 using EPiServer.Core;
-using Geta.Optimizely.Tags.Models;
 
-namespace Geta.Optimizely.Tags.Interfaces
+namespace Geta.Optimizely.Tags.Core
 {
     public interface ITagEngine
     {

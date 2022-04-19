@@ -13,9 +13,8 @@ using EPiServer.DataAnnotations;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
-using Geta.Optimizely.Tags.Attributes;
-using Geta.Optimizely.Tags.Helpers;
-using Geta.Optimizely.Tags.Interfaces;
+using Geta.Optimizely.Tags.Core;
+using Geta.Optimizely.Tags.Core.Attributes;
 
 namespace Geta.Optimizely.Tags
 {

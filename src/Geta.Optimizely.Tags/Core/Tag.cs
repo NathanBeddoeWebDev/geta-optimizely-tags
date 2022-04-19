@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using EPiServer.Data;
 using EPiServer.Data.Dynamic;
 
-namespace Geta.Optimizely.Tags.Models
+namespace Geta.Optimizely.Tags.Core
 {
     [EPiServerDataStore(AutomaticallyCreateStore = true, AutomaticallyRemapStore = true)]
     public class Tag
@@ -29,7 +29,7 @@ namespace Geta.Optimizely.Tags.Models
 
         public IList<Guid> PermanentLinks { get; set; }
 
-        public bool checkedEditContentTags { get; set; }
+        public bool CheckedEditContentTags { get; set; }
 
         public override int GetHashCode()
         {

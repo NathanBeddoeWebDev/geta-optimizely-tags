@@ -10,7 +10,7 @@ using EPiServer.Core;
 using EPiServer.Data;
 using EPiServer.DataAccess;
 using EPiServer.Security;
-using Geta.Optimizely.Tags.Interfaces;
+using Geta.Optimizely.Tags.Core;
 using Geta.Optimizely.Tags.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +25,7 @@ namespace Geta.Optimizely.Tags.Controllers
         private readonly ITagRepository _tagRepository;
         private readonly IContentRepository _contentRepository;
         private readonly ITagEngine _tagEngine;
-        
+
         public GetaTagsAdminController(
             ITagRepository tagRepository, IContentRepository contentRepository, ITagEngine tagEngine)
         {
@@ -98,7 +98,7 @@ namespace Geta.Optimizely.Tags.Controllers
                 return RedirectToAction("Index", new { page, searchString });
             }
 
-            if (eddittedTag.checkedEditContentTags)
+            if (eddittedTag.CheckedEditContentTags)
             {
                 EditTagsInContentRepository(existingTag, eddittedTag);
             }

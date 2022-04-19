@@ -4,19 +4,22 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Globalization;
 using EPiServer.Web;
-using Geta.Optimizely.Tags.Attributes;
+using Geta.Optimizely.Tags.Core.Attributes;
 
-namespace Geta.Optimizely.Tags.Helpers
+namespace Geta.Optimizely.Tags.Core
 {
     public static class TagsHelper
     {
         public static string GetGroupKeyFromAttributes(
-            TagsGroupKeyAttribute groupKeyAttribute, CultureSpecificAttribute cultureSpecificAttribute, IContent content)
+            TagsGroupKeyAttribute groupKeyAttribute,
+            CultureSpecificAttribute cultureSpecificAttribute,
+            IContent content)
         {
             var groupKey = string.Empty;
 
@@ -43,22 +46,14 @@ namespace Geta.Optimizely.Tags.Helpers
             return PermanentLinkUtility.FindContentReference(contentGuid) ?? ContentReference.EmptyReference;
         }
 
-        public static IEnumerable<ContentReference> GetContentReferences(List<Guid> contentLinks)
+        public static IEnumerable<ContentReference> GetContentReferences(IEnumerable<Guid> contentLinks)
         {
-            foreach (var contentLink in contentLinks)
-            {
-                var reference = GetContentReference(contentLink);
-
-                if (!ContentReference.IsNullOrEmpty(reference))
-                {
-                    yield return reference;
-                }
-            }
+            return contentLinks.Select(GetContentReference).Where(reference => !ContentReference.IsNullOrEmpty(reference));
         }
 
         public static bool IsTagProperty(PropertyDefinition propertyDefinition)
         {
-            return propertyDefinition != null 
+            return propertyDefinition != null
                    && propertyDefinition.TemplateHint == "Tags";
         }
     }

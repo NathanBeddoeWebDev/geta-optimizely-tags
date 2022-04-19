@@ -7,14 +7,12 @@ using EPiServer.Cms.Shell.Extensions;
 using EPiServer.DataAnnotations;
 using EPiServer.Shell;
 using EPiServer.Shell.ObjectEditing;
-using Geta.Optimizely.Tags.Attributes;
-using Geta.Optimizely.Tags.Helpers;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 
-namespace Geta.Optimizely.Tags.EditorDescriptors
+namespace Geta.Optimizely.Tags.Core.Attributes
 {
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class GetaTagsAttribute : Attribute, IDisplayMetadataProvider, IMetadataDetailsProvider
+    [AttributeUsage(AttributeTargets.Property)]
+    public class GetaTagsAttribute : Attribute, IDisplayMetadataProvider
     {
         public bool AllowSpaces { get; set; }
         public bool CaseSensitive { get; set; }

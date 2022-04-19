@@ -9,8 +9,7 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.PlugIn;
 using EPiServer.Scheduler;
-using Geta.Optimizely.Tags.Helpers;
-using Geta.Optimizely.Tags.Interfaces;
+using Geta.Optimizely.Tags.Core;
 using Geta.Optimizely.Tags.Models;
 
 namespace Geta.Optimizely.Tags

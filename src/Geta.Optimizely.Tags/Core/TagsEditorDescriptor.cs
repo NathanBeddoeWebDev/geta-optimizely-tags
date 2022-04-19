@@ -8,10 +8,9 @@ using EPiServer.Cms.Shell.Extensions;
 using EPiServer.DataAnnotations;
 using EPiServer.Shell.ObjectEditing;
 using EPiServer.Shell.ObjectEditing.EditorDescriptors;
-using Geta.Optimizely.Tags.Attributes;
-using Geta.Optimizely.Tags.Helpers;
+using Geta.Optimizely.Tags.Core.Attributes;
 
-namespace Geta.Optimizely.Tags.EditorDescriptors
+namespace Geta.Optimizely.Tags.Core
 {
     [EditorDescriptorRegistration(TargetType = typeof(string), UIHint = "Tags")]
     public class TagsEditorDescriptor : EditorDescriptor

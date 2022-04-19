@@ -10,6 +10,7 @@ using EPiServer.Enterprise.Transfer;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
+using Geta.Optimizely.Tags.Core;
 using Geta.Optimizely.Tags.Models;
 
 namespace Geta.Optimizely.Tags

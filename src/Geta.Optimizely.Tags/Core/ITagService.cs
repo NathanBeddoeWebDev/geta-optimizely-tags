@@ -5,20 +5,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using EPiServer.Data;
-using Geta.Optimizely.Tags.Models;
 
-namespace Geta.Optimizely.Tags.Interfaces
+namespace Geta.Optimizely.Tags.Core
 {
-    public interface ITagRepository
+    public interface ITagService
     {
         Tag GetTagById(Identity id);
+        IEnumerable<Tag> GetTagsByContent(Guid contentGuid);
         [Obsolete("Use GetTagByNameAndGroup instead.")]
         Tag GetTagByName(string name);
         Tag GetTagByNameAndGroup(string name, string groupKey);
         IEnumerable<Tag> GetTagsByName(string name);
-        IEnumerable<Tag> GetTagsByContent(Guid contentGuid);
         IQueryable<Tag> GetAllTags();
         Identity Save(Tag tag);
-        void Delete(Tag tag);
+        Tag Save(Guid contentGuid, string name, string groupKey);
+        void Save(Guid contentGuid, IEnumerable<string> names, string groupKey);
+        void Delete(string name);
+        void Delete(Identity id);
     }
 }

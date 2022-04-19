@@ -12,10 +12,6 @@ namespace Geta.Optimizely.Tags.Controllers
     {
         private readonly ITagService _tagService;
 
-        public GetaTagsController() : this (ServiceLocator.Current.GetInstance<ITagService>())
-        {
-        }
-
         public GetaTagsController(ITagService tagService)
         {
             _tagService = tagService;

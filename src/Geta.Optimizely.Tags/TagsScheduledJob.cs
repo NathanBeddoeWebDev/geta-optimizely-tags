@@ -9,7 +9,6 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.PlugIn;
 using EPiServer.Scheduler;
-using EPiServer.ServiceLocation;
 using Geta.Optimizely.Tags.Helpers;
 using Geta.Optimizely.Tags.Interfaces;
 using Geta.Optimizely.Tags.Models;
@@ -25,12 +24,15 @@ namespace Geta.Optimizely.Tags
         private readonly IContentTypeRepository _contentTypeRepository;
         private readonly IContentLoader _contentLoader;
 
-        public TagsScheduledJob()
+        public TagsScheduledJob(
+            IContentTypeRepository contentTypeRepository,
+            ITagService tagService,
+            IContentLoader contentLoader)
         {
+            _contentTypeRepository = contentTypeRepository;
+            _tagService = tagService;
+            _contentLoader = contentLoader;
             IsStoppable = true;
-            _contentTypeRepository = ServiceLocator.Current.GetInstance<IContentTypeRepository>();
-            _tagService = ServiceLocator.Current.GetInstance<ITagService>();
-            _contentLoader = ServiceLocator.Current.GetInstance<IContentLoader>();
         }
 
         public override string Execute()
@@ -56,7 +58,9 @@ namespace Geta.Optimizely.Tags
                         content = _contentLoader.Get<IContent>(contentReference);
                     }
                 }
-                catch (ContentNotFoundException) {}
+                catch (ContentNotFoundException)
+                {
+                }
 
                 if (content == null || (content is PageData data && data.IsDeleted))
                 {
@@ -107,6 +111,7 @@ namespace Geta.Optimizely.Tags
             {
                 return GetAllLanguageTagNames(content, propertyDefinition);
             }
+
             return ((ContentData)content)[propertyDefinition.Name] as string;
         }
 

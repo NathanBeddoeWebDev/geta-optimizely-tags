@@ -3,6 +3,7 @@ using System.Linq;
 using EPiServer.Shell.Modules;
 using Geta.Optimizely.Tags.Core;
 using Geta.Optimizely.Tags.Core.Events;
+using Geta.Optimizely.Tags.Core.Export;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Geta.Optimizely.Tags.Infrastructure.Configuration
@@ -18,6 +19,8 @@ namespace Geta.Optimizely.Tags.Infrastructure.Configuration
             services.AddTransient<ITagEngine, TagEngine>();
             services.AddSingleton<Func<ITagService>>(x => x.GetRequiredService<ITagService>);
             services.AddSingleton<TagsInitializer>();
+            services.AddTransient<TagsExporter>();
+            services.AddSingleton<Func<TagsExporter>>(x => x.GetRequiredService<TagsExporter>);
 
             services.Configure<ProtectedModuleOptions>(
                 pm =>

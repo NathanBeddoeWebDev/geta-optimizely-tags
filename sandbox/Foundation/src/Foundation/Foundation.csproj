@@ -122,4 +122,7 @@
 		<None Include="Features\Shared\Components\Dropdown\Default.cshtml" />
 		<None Include="Features\Shared\Components\Money\Default.cshtml" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\..\src\Geta.Optimizely.Tags\Geta.Optimizely.Tags.csproj" />
+	</ItemGroup>
 </Project>

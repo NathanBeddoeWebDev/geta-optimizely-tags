@@ -20,6 +20,7 @@ using Foundation.Infrastructure.Display;
 using Geta.NotFoundHandler.Infrastructure.Configuration;
 using Geta.NotFoundHandler.Infrastructure.Initialization;
 using Geta.NotFoundHandler.Optimizely;
+using Geta.Optimizely.Tags.Infrastructure.Configuration;
 using Jhoose.Security.DependencyInjection;
 using Mediachase.Commerce.Anonymous;
 using Mediachase.Commerce.Orders;
@@ -93,8 +94,8 @@ namespace Foundation
                 o.EnablePreviewFeatures = true;
                 o.IncludeEmptyContentProperties = true;
                 o.FlattenPropertyModel = false;
-                o.IncludeMasterLanguage = false; 
-                
+                o.IncludeMasterLanguage = false;
+
             });
 
             // Content Delivery API
@@ -136,7 +137,7 @@ namespace Foundation
                 options.Applications.Add(application);
                 options.AllowResourceOwnerPasswordFlow = true;
             });
-            
+
             services.AddOpenIDConnectUI();
 
             services.ConfigureContentDeliveryApiSerializer(settings => settings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore);
@@ -163,6 +164,8 @@ namespace Foundation
 
             // Add ContentManager
             services.AddContentManager();
+
+            services.AddGetaTags();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -43,7 +43,8 @@ namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags
 
         private IEnumerable<Tag> FindTags()
         {
-            return _tagRepository.GetAllTags().ToList();
+            var allTags = _tagRepository.GetAllTags().ToList();
+            return HasQuery ? allTags.Where(x => x.Name.Contains(Query)) : allTags;
         }
     }
 }

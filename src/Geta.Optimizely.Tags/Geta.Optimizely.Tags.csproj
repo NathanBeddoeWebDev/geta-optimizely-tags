@@ -45,5 +45,12 @@
         </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Geta.Tags.Views\Views\GetaTagsAdmin\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Geta.Tags.Views\Views\GetaTagsAdmin\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Geta.Tags.Views\Views\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Geta.Tags.Views\Views\_viewstart.cshtml" />
+    </ItemGroup>
+
     <Import Project="msbuild\Main.proj" />
 </Project>

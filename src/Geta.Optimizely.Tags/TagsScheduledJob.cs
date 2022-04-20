@@ -10,7 +10,6 @@ using EPiServer.DataAbstraction;
 using EPiServer.PlugIn;
 using EPiServer.Scheduler;
 using Geta.Optimizely.Tags.Core;
-using Geta.Optimizely.Tags.Models;
 
 namespace Geta.Optimizely.Tags
 {
@@ -59,6 +58,7 @@ namespace Geta.Optimizely.Tags
                 }
                 catch (ContentNotFoundException)
                 {
+                    // Ignore if not found
                 }
 
                 if (content == null || (content is PageData data && data.IsDeleted))

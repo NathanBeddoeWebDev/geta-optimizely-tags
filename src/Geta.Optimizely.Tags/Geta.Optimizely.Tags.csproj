@@ -25,6 +25,7 @@
         <PackageReference Include="EPiServer.CMS.Core" Version="12.0.3" />
         <PackageReference Include="EPiServer.CMS.UI.Core" Version="12.0.2" />
         <PackageReference Include="EPiServer.Framework" Version="12.0.3" />
+        <PackageReference Include="X.PagedList" Version="8.1.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -42,6 +43,14 @@
             <PackagePath>\</PackagePath>
             <Link>icon.png</Link>
         </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Pages\Geta.Optimizely.Tags.Admin\Components" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Geta.Optimizely.Tags.Admin\Components\CheckboxReadonly\Default.cshtml" />
     </ItemGroup>
 
     <Import Project="msbuild\Main.proj" />

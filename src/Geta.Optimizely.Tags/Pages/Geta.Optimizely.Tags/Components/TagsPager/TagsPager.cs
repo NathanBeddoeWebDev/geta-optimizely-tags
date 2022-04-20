@@ -2,13 +2,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
 
-namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Admin.Components.TagsPager
+namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Components.TagsPager
 {
-    public class TagsPagerViewComponent : ViewComponent
+    public class TagsPager : ViewComponent
     {
         private readonly IHttpContextAccessor _contextAccessor;
 
-        public TagsPagerViewComponent(IHttpContextAccessor contextAccessor)
+        public TagsPager(IHttpContextAccessor contextAccessor)
         {
             _contextAccessor = contextAccessor;
         }

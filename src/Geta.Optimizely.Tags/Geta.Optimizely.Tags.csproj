@@ -45,13 +45,5 @@
         </None>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Pages\Geta.Optimizely.Tags.Admin\Components" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Pages\Geta.Optimizely.Tags.Admin\Components\CheckboxReadonly\Default.cshtml" />
-    </ItemGroup>
-
     <Import Project="msbuild\Main.proj" />
 </Project>

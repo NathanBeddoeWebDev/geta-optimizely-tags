@@ -20,6 +20,7 @@ using Foundation.Infrastructure.Display;
 using Geta.NotFoundHandler.Infrastructure.Configuration;
 using Geta.NotFoundHandler.Infrastructure.Initialization;
 using Geta.NotFoundHandler.Optimizely;
+using Geta.NotFoundHandler.Optimizely.Infrastructure.Configuration;
 using Geta.Optimizely.Tags.Infrastructure.Configuration;
 using Geta.Optimizely.Tags.Infrastructure.Initialization;
 using Jhoose.Security.DependencyInjection;

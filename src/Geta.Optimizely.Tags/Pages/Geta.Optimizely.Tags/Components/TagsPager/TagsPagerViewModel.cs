@@ -1,6 +1,6 @@
 using System.Web;
 
-namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Admin.Components.TagsPager
+namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Components.TagsPager
 {
     public class TagsPagerViewModel
     {

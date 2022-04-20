@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Geta.Optimizely.Tags.Core;
-using Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Admin.Models;
+using Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using X.PagedList;
 
-namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Admin
+namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags
 {
     public class Index : PageModel
     {

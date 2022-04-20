@@ -1,4 +1,4 @@
-namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Admin.Models
+namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Models
 {
     public class TagEditModel
     {

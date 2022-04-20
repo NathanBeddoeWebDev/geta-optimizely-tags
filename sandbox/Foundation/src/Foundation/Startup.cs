@@ -1,5 +1,4 @@
-﻿using EPiServer.Authorization;
-using EPiServer.ContentApi.Cms;
+﻿using EPiServer.ContentApi.Cms;
 using EPiServer.ContentApi.Cms.Internal;
 using EPiServer.ContentDefinitionsApi;
 using EPiServer.ContentManagementApi;
@@ -7,7 +6,6 @@ using EPiServer.Data;
 using EPiServer.Framework.Web.Resources;
 using EPiServer.Labs.ContentManager;
 using EPiServer.OpenIDConnect;
-using EPiServer.ServiceLocation;
 using EPiServer.Shell.Modules;
 using EPiServer.Web;
 using EPiServer.Web.Routing;
@@ -17,10 +15,6 @@ using Foundation.Infrastructure.Cms.Extensions;
 using Foundation.Infrastructure.Cms.ModelBinders;
 using Foundation.Infrastructure.Cms.Users;
 using Foundation.Infrastructure.Display;
-using Geta.NotFoundHandler.Infrastructure.Configuration;
-using Geta.NotFoundHandler.Infrastructure.Initialization;
-using Geta.NotFoundHandler.Optimizely;
-using Geta.NotFoundHandler.Optimizely.Infrastructure.Configuration;
 using Geta.Optimizely.Tags.Infrastructure.Configuration;
 using Geta.Optimizely.Tags.Infrastructure.Initialization;
 using Jhoose.Security.DependencyInjection;
@@ -144,8 +138,6 @@ namespace Foundation
 
             services.ConfigureContentDeliveryApiSerializer(settings => settings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore);
 
-            services.AddNotFoundHandler(o => o.UseSqlServer(_configuration.GetConnectionString("EPiServerDB")), policy => policy.RequireRole(Roles.CmsAdmins));
-            services.AddOptimizelyNotFoundHandler();
             services.AddJhooseSecurity(_configuration);
             services.Configure<ProtectedModuleOptions>(x =>
             {
@@ -173,7 +165,6 @@ namespace Foundation
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseNotFoundHandler();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

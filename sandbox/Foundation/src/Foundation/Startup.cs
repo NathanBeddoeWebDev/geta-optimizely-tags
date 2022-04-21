@@ -138,6 +138,8 @@ namespace Foundation
 
             services.ConfigureContentDeliveryApiSerializer(settings => settings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore);
 
+            services.AddGetaTags();
+
             services.AddJhooseSecurity(_configuration);
             services.Configure<ProtectedModuleOptions>(x =>
             {
@@ -149,6 +151,7 @@ namespace Foundation
                     });
                 }
             });
+
             // Don't camelCase Json output -- leave property names unchanged
             services.AddControllers()
                 .AddJsonOptions(options =>
@@ -158,8 +161,6 @@ namespace Foundation
 
             // Add ContentManager
             services.AddContentManager();
-
-            services.AddGetaTags();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

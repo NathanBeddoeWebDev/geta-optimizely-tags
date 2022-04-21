@@ -1,8 +1,8 @@
 using System.Web;
 
-namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Components.TagsPager
+namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Components.Pager
 {
-    public class TagsPagerViewModel
+    public class PagerViewModel
     {
         public bool HasPreviousPage { get; set; }
         public bool HasNextPage { get; set; }

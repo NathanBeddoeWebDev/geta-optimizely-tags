@@ -1,5 +1,4 @@
 @page
-@using Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Components.TagsPager
 @model Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Index
 
 <form method="get">
@@ -72,7 +71,6 @@
             }
             </tbody>
         </table>
-        @*@await Component.InvokeAsync(nameof(TagsPager), new { items = Model.Items })*@
-        @*<vc:tags-pager items="@Model.Items" />*@
+        <vc:pager items="@Model.Items" />
     </div>
 </form>

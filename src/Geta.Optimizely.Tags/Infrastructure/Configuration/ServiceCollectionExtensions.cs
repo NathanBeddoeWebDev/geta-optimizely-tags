@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using EPiServer.Authorization;
 using EPiServer.Shell.Modules;

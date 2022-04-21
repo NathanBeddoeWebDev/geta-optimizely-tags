@@ -1,56 +1,51 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
-    <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
-        <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-        <PackageId>Geta.Optimizely.Tags</PackageId>
-        <Title>Geta Optimizely Tags</Title>
-        <Authors>Geta Digital</Authors>
-        <Company>Geta Digital</Company>
-        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-        <PackageProjectUrl>https://github.com/Geta/geta-optimizely-tags</PackageProjectUrl>
-        <PackageIcon>icon.png</PackageIcon>
-        <PackageIconUrl>https://cdn.geta.no/opensource/icons/geta-sitemaps-icon.png</PackageIconUrl>
-        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-        <Description>Easily add tags to your EPiServer content and use the powerful query engine to get back what you want.</Description>
-        <PackageReleaseNotes>https://github.com/Geta/geta-optimizely-tags/blob/master/CHANGELOG.md</PackageReleaseNotes>
-        <PackageTags>Tags Optimizely Geta</PackageTags>
-        <RepositoryUrl>https://github.com/Geta/geta-optimizely-tags.git</RepositoryUrl>
-    </PropertyGroup>
 
-    <ItemGroup>
-        <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    </ItemGroup>
-    
-    <ItemGroup>
-        <PackageReference Include="EPiServer.CMS.Core" Version="12.0.3" />
-        <PackageReference Include="EPiServer.CMS.UI.Core" Version="12.0.2" />
-        <PackageReference Include="EPiServer.Framework" Version="12.0.3" />
-        <PackageReference Include="X.PagedList" Version="8.1.0" />
-    </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <PackageId>Geta.Optimizely.Tags</PackageId>
+    <Title>Geta Optimizely Tags</Title>
+    <Authors>Geta Digital</Authors>
+    <Company>Geta Digital</Company>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Geta/geta-optimizely-tags</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl>https://cdn.geta.no/opensource/icons/geta-sitemaps-icon.png</PackageIconUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>Easily add tags to your EPiServer content and use the powerful query engine to get back what you want.</Description>
+    <PackageReleaseNotes>https://github.com/Geta/geta-optimizely-tags/blob/master/CHANGELOG.md</PackageReleaseNotes>
+    <PackageTags>Tags Optimizely Geta</PackageTags>
+    <RepositoryUrl>https://github.com/Geta/geta-optimizely-tags.git</RepositoryUrl>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <Content Remove="module\module.config" />
-    </ItemGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <None Include="module\module.config" />
-        <None Include="msbuild\Main.proj" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EPiServer.CMS.Core" Version="12.0.3" />
+    <PackageReference Include="EPiServer.CMS.UI.Core" Version="12.0.2" />
+    <PackageReference Include="EPiServer.Framework" Version="12.0.3" />
+    <PackageReference Include="X.PagedList" Version="8.1.0" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <None Include="..\..\images\icon.png">
-            <Pack>true</Pack>
-            <PackagePath>\</PackagePath>
-            <Link>icon.png</Link>
-        </None>
-    </ItemGroup>
+  <ItemGroup>
+    <Content Remove="module\module.config" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Geta.Tags.Views\Views\GetaTagsAdmin\Edit.cshtml" />
-      <_ContentIncludedByDefault Remove="Geta.Tags.Views\Views\GetaTagsAdmin\Index.cshtml" />
-      <_ContentIncludedByDefault Remove="Geta.Tags.Views\Views\Shared\_Layout.cshtml" />
-      <_ContentIncludedByDefault Remove="Geta.Tags.Views\Views\_viewstart.cshtml" />
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="module\module.config" />
+    <None Include="msbuild\Main.proj" />
+  </ItemGroup>
 
-    <Import Project="msbuild\Main.proj" />
+  <ItemGroup>
+    <None Include="..\..\images\icon.png">
+      <Pack>true</Pack>
+      <PackagePath>\</PackagePath>
+      <Link>icon.png</Link>
+    </None>
+  </ItemGroup>
+
+  <Import Project="msbuild\Main.proj" />
+
 </Project>

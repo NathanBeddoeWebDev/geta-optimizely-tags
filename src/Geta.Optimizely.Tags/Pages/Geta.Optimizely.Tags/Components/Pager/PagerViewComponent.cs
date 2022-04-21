@@ -2,13 +2,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
 
-namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Components.TagsPager
+namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Components.Pager
 {
-    public class TagsPager : ViewComponent
+    public class PagerViewComponent : ViewComponent
     {
         private readonly IHttpContextAccessor _contextAccessor;
 
-        public TagsPager(IHttpContextAccessor contextAccessor)
+        public PagerViewComponent(IHttpContextAccessor contextAccessor)
         {
             _contextAccessor = contextAccessor;
         }
@@ -16,13 +16,13 @@ namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Components.TagsPager
         public IViewComponentResult Invoke(IPagedList items)
         {
             var context = _contextAccessor.HttpContext;
-            return View(new TagsPagerViewModel
+            return View(new PagerViewModel
             {
                 HasPreviousPage = items.HasPreviousPage,
                 HasNextPage = items.HasNextPage,
                 PageNumber = items.PageNumber,
                 PageCount = items.PageCount,
-                QueryString = context.Request.QueryString.ToString()
+                QueryString = context?.Request.QueryString.ToString() ?? string.Empty
             });
         }
     }

@@ -111,3 +111,4 @@ UpgradeLog*.XML
 .idea
 
 License.config
+*.Development.json

@@ -8,6 +8,7 @@ using EPiServer.Data;
 using EPiServer.DataAccess;
 using EPiServer.Security;
 using Geta.Optimizely.Tags.Core;
+using Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Components.Pager;
 using Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -31,6 +32,8 @@ namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags
         public IPagedList<Tag> Items { get; set; } = Enumerable.Empty<Tag>().ToPagedList();
 
         public string EditItemId { get; set; }
+
+        public PagerViewModel Pager { get; set; }
 
         [BindProperty]
         public TagEditModel Tag { get; set; }
@@ -92,7 +95,7 @@ namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags
             {
                 _tagRepository.Delete(existingTag);
             }
-            
+
             return RedirectToPage();
         }
 
@@ -100,6 +103,19 @@ namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags
         {
             var items = FindTags().ToPagedList(Paging.PageNumber, Paging.PageSize);
             Items = items;
+            LoadPager();
+        }
+
+        private void LoadPager()
+        {
+            Pager = new PagerViewModel
+            {
+                HasPreviousPage = Items.HasPreviousPage,
+                HasNextPage = Items.HasNextPage,
+                PageNumber = Items.PageNumber,
+                PageCount = Items.PageCount,
+                QueryString = HttpContext.Request.QueryString.ToString() ?? string.Empty
+            };
         }
 
         private IEnumerable<Tag> FindTags()

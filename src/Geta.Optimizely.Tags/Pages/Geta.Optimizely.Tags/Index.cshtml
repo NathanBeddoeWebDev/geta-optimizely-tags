@@ -71,6 +71,7 @@
             }
             </tbody>
         </table>
+        @{ await Html.RenderPartialAsync("_Pager", Model.Pager); }
         @*<vc:pager items="@Model.Items" />*@
     </div>
 </form>

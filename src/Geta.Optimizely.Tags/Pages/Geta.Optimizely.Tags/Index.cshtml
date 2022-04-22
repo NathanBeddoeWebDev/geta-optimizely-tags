@@ -55,11 +55,11 @@
                 {
                     <tr class="align-middle">
                         <td>@item.Name</td>
-                        <td colspan="2">@item.GroupKey</td>
-                        <td>
+                        <td>@item.GroupKey</td>
+                        <td colspan="2" class="text-end">
                             <button type="submit" class="btn btn-secondary"
                                     asp-page-handler="edit" asp-route-id="@item.Id.ToString()">
-                                <span data-feather="trash-2"></span> edit
+                                <span data-feather="edit"></span> edit
                             </button>
                             <button type="submit" class="btn btn-danger"
                                     asp-page-handler="delete" asp-route-id="@item.Id.ToString()">
@@ -71,6 +71,6 @@
             }
             </tbody>
         </table>
-        <vc:pager items="@Model.Items" />
+        @*<vc:pager items="@Model.Items" />*@
     </div>
 </form>

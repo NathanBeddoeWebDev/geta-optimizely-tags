@@ -82,22 +82,9 @@ The following settings can currently be customized
 public virtual string Tags { get; set; }
 ```
 
-## Tags management
-
-Tags management panel is available via following url:
-
-```csharp 
-<project_url>/EPiServer/Geta.Tags/GetaTagsAdmin
-```
-
 ## Local development setup
 
-Use Geta.Tags.Sample (Episerver 12 preview version) project for testing
-
-Administrator credentials:
-
-Login: `administrator`
-Password: `Episerver123!`
+Use Foundation project in the solution for testing. Follow [Foundation](https://github.com/episerver/Foundation/tree/main) project's setup guide.
 
 ## Package maintainer
 

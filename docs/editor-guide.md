@@ -2,18 +2,20 @@
 
 ## Tags property
 
-Once the developer installed the package and defined a Tags property on a page or block the property will appear in the CMS. In the text field, a tag can be typed. After pressing enter, the tag is created. By clicking the 'x' the tag is removed.
+Once the developer installed the package and defined a Tags property on a page or block the property will appear in the CMS.
+
+In the text field, type a tag and press *Enter*. After pressing *Enter*, the tag is created. To remove the tag, click 'x' on the tag label.
 
 ![Tags property](images/tags-property.PNG)
 
 ## Geta Tags Management
 
-In the admin mode, a new plugin is available under the 'tools' menu section. The management view provides the ability to search, modify and delete a tag.
+In the Admin mode, Geta Tags management is available on the top menu. The management view provides ability to search, modify and delete a tag.
 
 ![Tags management](images/tags-management.PNG)
 
 ## Geta Tags maintenance scheduled job
 
-- A scheduled job that verifies all content - tag relations.
+A scheduled job that verifies all content - tag relations.
 
 ![Tags management](images/tags-scheduled-job.PNG)

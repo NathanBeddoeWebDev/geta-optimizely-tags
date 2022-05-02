@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using EPiServer.Core;
 using EPiServer.Data;
 
 namespace Geta.Optimizely.Tags.Core
@@ -12,8 +13,6 @@ namespace Geta.Optimizely.Tags.Core
     {
         Tag GetTagById(Identity id);
         IEnumerable<Tag> GetTagsByContent(Guid contentGuid);
-        [Obsolete("Use GetTagByNameAndGroup instead.")]
-        Tag GetTagByName(string name);
         Tag GetTagByNameAndGroup(string name, string groupKey);
         IEnumerable<Tag> GetTagsByName(string name);
         IQueryable<Tag> GetAllTags();
@@ -22,5 +21,6 @@ namespace Geta.Optimizely.Tags.Core
         void Save(Guid contentGuid, IEnumerable<string> names, string groupKey);
         void Delete(string name);
         void Delete(Identity id);
+        void UpdateContentTags(IContent content);
     }
 }

@@ -11,8 +11,6 @@ namespace Geta.Optimizely.Tags.Core
     public interface ITagRepository
     {
         Tag GetTagById(Identity id);
-        [Obsolete("Use GetTagByNameAndGroup instead.")]
-        Tag GetTagByName(string name);
         Tag GetTagByNameAndGroup(string name, string groupKey);
         IEnumerable<Tag> GetTagsByName(string name);
         IEnumerable<Tag> GetTagsByContent(Guid contentGuid);

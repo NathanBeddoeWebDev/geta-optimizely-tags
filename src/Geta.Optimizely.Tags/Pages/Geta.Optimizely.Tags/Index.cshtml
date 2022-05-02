@@ -1,0 +1,77 @@
+@page
+@model Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Index
+
+<form method="get">
+    <div class="search-container input-group flex-nowrap">
+        <input class="form-control w-100 border-end-0" type="text" placeholder="Search" aria-label="Search" id="search" name="q" value="@Model.Query">
+        <span class="input-group-append">
+            <button class="btn btn-outline-secondary border-start-0 border" type="button" data-clear="#search">
+                <span data-feather="x"></span>
+            </button>
+        </span>
+        <button type="submit" class="btn btn-outline-secondary search-button">
+            <span data-feather="search"></span> search
+        </button>
+    </div>
+</form>
+
+<form method="post">
+    <div class="table-responsive mt-3">
+        <table class="table table-hover table-sm" aria-label="Tags">
+            <thead>
+            <tr>
+                <th>Tag name</th>
+                <th>Group key</th>
+                <th class="col-1"></th>
+                <th class="col-1"></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.Items)
+            {
+                if (Model.IsEditing(item.Id.ToString()))
+                {
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" asp-for="Tag.Name">
+                            <span asp-validation-for="Tag.Name" class="text-danger"></span>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" asp-for="Tag.GroupKey">
+                            <span asp-validation-for="Tag.GroupKey" class="text-danger"></span>
+                        </td>
+                        <td class="text-center align-middle">
+                            <input type="checkbox" class="form-check-input" asp-for="Tag.CheckedEditContentTags"> Check this box to edit existing tags in the content
+                        </td>
+                        <td>
+                            <button type="submit" class="btn btn-primary"
+                                    asp-page-handler="update" asp-route-id="@item.Id.ToString()">
+                                <span data-feather="plus"></span> update
+                            </button>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr class="align-middle">
+                        <td>@item.Name</td>
+                        <td>@item.GroupKey</td>
+                        <td colspan="2" class="text-end">
+                            <button type="submit" class="btn btn-secondary"
+                                    asp-page-handler="edit" asp-route-id="@item.Id.ToString()">
+                                <span data-feather="edit"></span> edit
+                            </button>
+                            <button type="submit" class="btn btn-danger"
+                                    asp-page-handler="delete" asp-route-id="@item.Id.ToString()">
+                                <span data-feather="trash-2"></span> delete
+                            </button>
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+        @{ await Html.RenderPartialAsync("_Pager", Model.Pager); }
+        @*<vc:pager items="@Model.Items" />*@
+    </div>
+</form>

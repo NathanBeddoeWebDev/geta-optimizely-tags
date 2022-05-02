@@ -2,7 +2,7 @@
 
 ## Tags property
 
-Once the developer installed the package and defined a Tags property on a page or block the property will appear in the CMS. In the text field, a tag can be typed. After pressing enter the tag is created. By clicking the 'x' the tag is removed.
+Once the developer installed the package and defined a Tags property on a page or block the property will appear in the CMS. In the text field, a tag can be typed. After pressing enter, the tag is created. By clicking the 'x' the tag is removed.
 
 ![Tags property](images/tags-property.PNG)
 

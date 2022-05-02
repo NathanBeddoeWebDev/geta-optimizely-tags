@@ -22,10 +22,10 @@ See the [editor guide](docs/editor-guide.md) for more information.
 
 Start by installing NuGet package (use [Optimizely NuGet](https://nuget.optimizely.com/)):
 
-    dotnet add package Geta.Tags
+    dotnet add package Geta.Optimizely.Tags
 
 Geta Tags library uses [tag-it](https://github.com/aehlke/tag-it) jQuery UI plugin for selecting tags.
-To add Tags as a new property to your page types you need to use the UIHint attribute like in this example:
+To add Tags as a new property to your page types, you need to use the UIHint attribute like in this example:
 
 ```csharp
 [UIHint("Tags")]
@@ -41,8 +41,15 @@ public virtual string Tags { get; set; }
 ```
 
 Register tags in Startup.cs using folllowing service extension 
+
 ```csharp
 services.AddGetaTags();
+```
+
+Then, call `UseGetaTags` in the `Configure` method:
+
+```csharp
+app.UseGetaTags();
 ```
 
 Use ITagEngine to query for data:

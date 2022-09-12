@@ -22,7 +22,9 @@ See the [editor guide](docs/editor-guide.md) for more information.
 
 Start by installing NuGet package (use [Optimizely NuGet](https://nuget.optimizely.com/)):
 
-    dotnet add package Geta.Optimizely.Tags
+```
+dotnet add package Geta.Optimizely.Tags
+```
 
 Geta Tags library uses [tag-it](https://github.com/aehlke/tag-it) jQuery UI plugin for selecting tags.
 To add Tags as a new property to your page types, you need to use the UIHint attribute like in this example:
@@ -52,7 +54,16 @@ Then, call `UseGetaTags` in the `Configure` method:
 app.UseGetaTags();
 ```
 
-Use ITagEngine to query for data:
+Also, you have to add Razor pages routing support.
+
+```csharp
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+});
+```
+
+Use `ITagEngine` to query for data:
 
 ```csharp
 IEnumerable<ContentData> GetContentByTag(string tagName);

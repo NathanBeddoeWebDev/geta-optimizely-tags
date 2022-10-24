@@ -10,12 +10,14 @@ using EPiServer.Security;
 using Geta.Optimizely.Tags.Core;
 using Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Components.Pager;
 using Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using X.PagedList;
 
 namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags
 {
+    [Authorize(Constants.PolicyName)]
     public class Index : PageModel
     {
         private readonly ITagRepository _tagRepository;

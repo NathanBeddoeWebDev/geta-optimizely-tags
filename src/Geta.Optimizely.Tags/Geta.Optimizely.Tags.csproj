@@ -16,6 +16,7 @@
     <PackageReleaseNotes>https://github.com/Geta/geta-optimizely-tags/blob/master/CHANGELOG.md</PackageReleaseNotes>
     <PackageTags>Tags Optimizely Geta</PackageTags>
     <RepositoryUrl>https://github.com/Geta/geta-optimizely-tags.git</RepositoryUrl>
+    <StaticWebAssetBasePath>/_content/</StaticWebAssetBasePath>
   </PropertyGroup>
 
   <ItemGroup>

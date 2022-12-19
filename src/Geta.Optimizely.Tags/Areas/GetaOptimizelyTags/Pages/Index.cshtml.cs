@@ -105,19 +105,6 @@ namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags
         {
             var items = FindTags().ToPagedList(Paging.PageNumber, Paging.PageSize);
             Items = items;
-            LoadPager();
-        }
-
-        private void LoadPager()
-        {
-            Pager = new PagerViewModel
-            {
-                HasPreviousPage = Items.HasPreviousPage,
-                HasNextPage = Items.HasNextPage,
-                PageNumber = Items.PageNumber,
-                PageCount = Items.PageCount,
-                QueryString = HttpContext.Request.QueryString.ToString() ?? string.Empty
-            };
         }
 
         private IEnumerable<Tag> FindTags()

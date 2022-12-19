@@ -1,4 +1,6 @@
 @page
+@using Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Components.Pager
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags.Index
 
 <form method="get">
@@ -71,7 +73,6 @@
             }
             </tbody>
         </table>
-        @{ await Html.RenderPartialAsync("_Pager", Model.Pager); }
-        @*<vc:pager items="@Model.Items" />*@
+        @await Component.InvokeAsync(typeof(PagerViewComponent), new { Model.Items })
     </div>
 </form>

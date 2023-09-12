@@ -1,75 +1,92 @@
 ﻿define([
         "dojo/_base/declare",
-        "dijit/form/TextBox"
+        "dijit/form/TextBox",
+        "https://cdn.jsdelivr.net/npm/@yaireo/tagify",
+        "https://cdn.jsdelivr.net/npm/@yaireo/dragsort"
     ],
     function (
         declare,
-        TextBox
+        TextBox,
+        Tagify,
+        DragSort
     ) {
         return declare([TextBox], {
 
-            _tagWidget: null,
-
+            _tagify: null,
+            _abortController: new AbortController(),
             postCreate: function () {
                 this.inherited(arguments);
                 this._createTags();
             },
 
-            destroy: function() {
+            destroy: function () {
                 this._destroyTags();
                 this.inherited(arguments);
             },
 
             _createTags: function () {
                 this._destroyTags();
-
-                this._tagWidget = $(this.textbox).tagit({
-                    autocomplete: { delay: 0, minLength: 2, source: '/getatags?groupKey=' + this.groupKey },
-                    allowSpaces: this.allowSpaces,
-                    allowDuplicates: this.allowDuplicates,
-                    caseSensitive: this.caseSensitive,
-                    readOnly: this.readOnly,
-                    tagLimit: this.tagLimit !== -1 ? this.tagLimit : null,
-                    beforeTagAdded: function () {
-                        this.onFocus();
-                    }.bind(this),
-                    afterTagAdded: function () {
-                        if (this._tagWidget) {
-                            var value = this._tagWidget.val();
-                            this._set("value", value);
-                            this.onChange(value);
-                        }
-                    }.bind(this)
+                this._tagify = new Tagify(this.textbox, {
+                    whitelist: [],
+                    originalInputValueFormat: valuesArr => valuesArr.map(item => item.value).join(','),
+                    duplicates: this.allowDuplicates,
+                    userInput: !this.readOnly,
+                    maxTags: this.maxTags,
+                    dropdown: {
+                        enabled: 2,
+                        caseSensitive: this.caseSensitive
+                    },
+                    pattern: this.allowSpaces ? "^\\S+$" : null,
                 });
+                
+                new window.DragSort(this._tagify.DOM.scope, {
+                    selector: '.'+this._tagify.settings.classNames.tag,
+                    callbacks: {
+                        dragEnd: this._onDragEnd.bind(this)
+                    }
+                })
 
-                $(this.textbox).siblings("ul").first().sortable({
-                    stop: function (event, ui) {
-                        var list = $(event.target);
-                        var value = this._getTagValues(list);
-                        $(this._tagWidget).val(value);
-                        this._set("value", value);
-                        this.onChange(value);
-                    }.bind(this)
-                });
+                this._tagify.on('input', this._onInput.bind(this))
+                this._tagify.on('change', this._onAdd.bind(this))
+                this._tagify.on('add', this._onAdd.bind(this));
+            },
+            
+            _onDragEnd: function (elm) {
+                this._tagify.updateValueByDOMTags()
+                this._set(elm.value);
+                this.onChange(elm.value);
+            },
+            
+            _onAdd: function (e) {
+                this.onChange(e.target.value);
+                this._set(e.target.value)
             },
 
-            _destroyTags: function() {
-                this._tagWidget && this._tagWidget.tagit("destroy");
-                this._tagWidget = null;
+            _onInput: function (e) {
+                const value = e.detail.value;
+                this._tagify.whitelist = null;
+
+                this._abortController && this._abortController.abort();
+                this._abortController = new AbortController();
+                
+                fetch('/getatags?groupKey=' + value, {signal: this._abortController.signal})
+                    .then((res) =>  res.json())
+                    .then((newWhitelist) => {
+                        this._tagify.whitelist = newWhitelist;
+                        this._tagify.dropdown.show(value)
+                    })
+                
+                this._tagify.dropdown.hide();
+            },
+
+            _destroyTags: function () {
+                this._tagify && this._tagify.destroy();
+                this._tagify = null;
             },
 
             _setValueAttr: function (value, priorityChange) {
                 this.inherited(arguments);
                 this._started && !priorityChange && this._createTags();
             },
-
-            _getTagValues: function (list) {
-                return $(".tagit-label", list)
-                    .clone()
-                    .text(function (index, text) {
-                        return (index === 0) ? text : "," + text;
-                    })
-                    .text();
-            }
         });
     });

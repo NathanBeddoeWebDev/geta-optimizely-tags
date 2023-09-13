@@ -27,6 +27,7 @@
             _createTags: function () {
                 this._destroyTags();
                 this._tagify = new Tagify(this.textbox, {
+                    onChangeAfterBlur: false,
                     whitelist: [],
                     originalInputValueFormat: valuesArr => valuesArr.map(item => item.value).join(','),
                     duplicates: this.allowDuplicates,
@@ -36,9 +37,10 @@
                         enabled: 2,
                         caseSensitive: this.caseSensitive
                     },
-                    pattern: this.allowSpaces ? "^\\S+$" : null,
+                    delimiters: this.allowSpaces ? "," : ",| ",
+                    trim: this.allowSpaces, // this helps the space delimiter above work better
                 });
-                
+
                 new window.DragSort(this._tagify.DOM.scope, {
                     selector: '.'+this._tagify.settings.classNames.tag,
                     callbacks: {
@@ -46,20 +48,30 @@
                     }
                 })
 
+                this.textbox.addEventListener('focus', (event) => { // divert focus to tagify input from standard input.
+                    event.preventDefault();
+                    const tagifyInput = document.querySelector('.tagify__input');
+                    tagifyInput.focus();
+                })
+
                 this._tagify.on('input', this._onInput.bind(this))
-                this._tagify.on('change', this._onAdd.bind(this))
-                this._tagify.on('add', this._onAdd.bind(this));
+                this._tagify.on('add change', this._onChange.bind(this))
+                this._tagify.on('edit:updated', this._onEdit.bind(this))
             },
-            
+
             _onDragEnd: function (elm) {
                 this._tagify.updateValueByDOMTags()
-                this._set(elm.value);
                 this.onChange(elm.value);
             },
-            
-            _onAdd: function (e) {
-                this.onChange(e.target.value);
-                this._set(e.target.value)
+
+            _onChange: function (e) {
+                this._set(e.detail.value);
+            },
+
+            _onEdit: function (e) {
+                this._tagify.updateValueByDOMTags()
+                this.textbox.value = this._tagify.value.map(tag => tag.value).toString()
+                this._set(this._tagify.value.map(tag => tag.value).toString())
             },
 
             _onInput: function (e) {
@@ -68,14 +80,14 @@
 
                 this._abortController && this._abortController.abort();
                 this._abortController = new AbortController();
-                
-                fetch('/getatags?groupKey=' + value, {signal: this._abortController.signal})
+
+                fetch(`/getatags?groupKey=${this.groupKey || ""}&term=${value}`, {signal: this._abortController.signal})
                     .then((res) =>  res.json())
                     .then((newWhitelist) => {
-                        this._tagify.whitelist = newWhitelist;
+                        this._tagify.whitelist = newWhitelist.filter((tag) => this.allowSpaces ? true : !tag.includes(" "));
                         this._tagify.dropdown.show(value)
                     })
-                
+
                 this._tagify.dropdown.hide();
             },
 

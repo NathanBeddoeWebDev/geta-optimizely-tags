@@ -110,7 +110,7 @@ namespace Geta.Optimizely.Tags.Pages.Geta.Optimizely.Tags
         private IEnumerable<Tag> FindTags()
         {
             var allTags = _tagRepository.GetAllTags().ToList();
-            return HasQuery ? allTags.Where(x => x.Name.Contains(Query)) : allTags;
+            return HasQuery ? allTags.Where(x => x.Name.Contains(Query, StringComparison.InvariantCultureIgnoreCase)) : allTags;
         }
 
         private void EditTagsInContentRepository(Tag tagFromTagRepository, TagEditModel tagFromUser)
